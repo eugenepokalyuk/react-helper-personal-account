@@ -11,21 +11,20 @@ const PhotoCard: FC<{ photoUrl: string }> = ({ photoUrl }) => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-        <div className="relative" style={{ borderRadius: '30px', overflow: 'hidden', width: '110px', height: '160px' }}>
+        <div className="relative" style={{ borderRadius: '12px', overflow: 'hidden', width: '110px', height: '160px' }}>
             {!isModalOpen && (
                 <>
                     <img
                         src={photoUrl}
                         alt="Thumbnail"
                         className="w-full h-full object-cover"
-                        style={{ borderRadius: '30px' }}
+                        style={{ borderRadius: '12px' }}
                     />
                     <button
                         onClick={() => setModalOpen(true)}
                         className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center"
                         aria-label="View image"
                     >
-                        {/* Placeholder for view icon */}
                     </button>
                 </>
             )}

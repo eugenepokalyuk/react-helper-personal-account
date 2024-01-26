@@ -1,0 +1,29 @@
+.navbar-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.menu-items {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.menu-item {
+    /* margin-right: 10px; */
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item.selected {
+    opacity: 1;
+    background-color: #F2F4F9;
+    border-radius: 100px;
+}
+
+.scroll-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

@@ -5,7 +5,7 @@ const ProfileCard: React.FC = () => {
     const tags = ["19 лет", "Москва", "", "Опыт 5 лет", "Выход: 2 недели"];
 
     return (
-        <section className="flex flex-col items-center max-md:items-start max-md:justify-center py-2 text-black">
+        <section className="flex flex-col items-center max-md:items-start max-md:justify-center text-black">
             <picture
                 className='max-w-[235px] m-auto'
                 style={{ width: '100%', height: '100%' }}
@@ -17,13 +17,14 @@ const ProfileCard: React.FC = () => {
                     style={{ width: '100%', height: '100%' }}
                 />
             </picture>
-            <div className="text-center max-md:text-left">
-                <h1 className="mt-4 md:mt-0 font-hauss text-[38px] font-bold leading-tight tracking-tight" style={{ letterSpacing: '-1.5px' }}>
+
+            <div className="text-center max-md:text-left mt-4">
+                <h1 className="mt-4 md:mt-0 text-[38px] font-bold leading-tight tracking-tight" style={{ letterSpacing: '-1.5px' }}>
                     {mock.name}
                 </h1>
                 <div className="mt-4 flex flex-wrap gap-[6px] justify-center max-md:justify-start">
                     {tags.map((tag, index) => (
-                        tag && <span key={index} className="bg-white font-hauss px-[15px] py-[12px] rounded-full text-sm text-black font-medium">{tag}</span>
+                        tag && <span key={index} className="bg-white px-[15px] py-[12px] rounded-full text-[15px] text-black font-[500] leading-[105%]">{tag}</span>
                     ))}
                 </div>
             </div>

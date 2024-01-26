@@ -1,7 +1,35 @@
+@import url(https://db.onlinewebfonts.com/c/d3661cda6871e1f820836d12b6322858?family=ALS+Hauss+Variable);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "ALS Hauss Variable";
+    src: url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.eot");
+    src: url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.svg#ALS Hauss Variable")format("svg");
+}
+
 html {
     background: #F5F5F5;
+}
+
+img {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+* {
+    font-family: "ALS Hauss Variable";
+}
+
+.{
+    font-family: "ALS Hauss Variable";
 }

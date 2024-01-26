@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as IconLike } from '../../assets/like.svg';
+import H1 from '../../ui/Headers/H1';
 import SalaryIndicator from '../SalaryIndicator/SalaryIndicator';
 
 interface JobCardProps {
@@ -20,12 +21,13 @@ const JobCard: React.FC<JobCardProps> = ({
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
                     <IconLike className='mr-1' />
-                    <h2 className='font-hauss text-sm'>{title}</h2>
+                    <h2 className='text-[15px] font-[500] leading-[105%]'>{title}</h2>
                 </div>
             </div>
 
             <div className='mt-[14px]'>
-                <h1 className='font-hauss text-[30px] font-semibold mb-4 leading-[30px] text-black'>{subtitle}</h1>
+                <H1 title={subtitle} />
+                {/* <h1 className='text-[30px] font-semibold mb-4 leading-[30px] text-black'>{subtitle}</h1> */}
             </div>
 
             <div>
@@ -33,7 +35,7 @@ const JobCard: React.FC<JobCardProps> = ({
             </div>
 
             <div className="mt-4">
-                <p className="text-sm text-black/40">{description}</p>
+                <p className="text-[12px] font-[400] leading-[115%] text-black/40">{description}</p>
             </div>
         </article>
     );

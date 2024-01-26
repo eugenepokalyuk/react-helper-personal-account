@@ -1,11 +1,15 @@
-export interface Experience {
+export type Experience = {
     period: string;
     duration: string;
     grade: string;
     job: string;
     points: string[];
-    logo: string; // Assuming logo is a React component
+    logo: string;
     videoThumbnail?: string;
     videoUrl?: string;
     imageUrl?: string;
 }
+
+export type MenuItem = {
+    name: string;
+};
