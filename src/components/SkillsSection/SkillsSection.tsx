@@ -5,12 +5,10 @@ import { ReactComponent as ResearchIcon } from '../../assets/research.svg'; // P
 import Avatar from '../../assets/skills-user.png';
 import TinkoffLogo from '../../assets/tinkoff-logo.png';
 import YandexLogo from '../../assets/yandex-logo.png';
-import { Card } from '../../utils/types';
 import UserCard from '../UserCard/UserCard';
 
 interface SkillsSectionProps {
     title: string;
-    cards: Card[];
 }
 
 const cards = [
@@ -128,7 +126,7 @@ const cards = [
     },
 ];
 
-const SkillsSection: React.FC<{ title: string }> = ({ title }) => {
+const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
 
     const handleCardClick = (index: number) => {
