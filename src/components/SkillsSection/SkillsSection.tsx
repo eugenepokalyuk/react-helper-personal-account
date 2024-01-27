@@ -1,9 +1,17 @@
+import React, { useState } from 'react';
 import { ReactComponent as ThumbsUpIcon } from '../../assets/like.svg'; // Path to your SVG
 import OzonLogo from '../../assets/ozon-logo.png';
+import { ReactComponent as ResearchIcon } from '../../assets/research.svg'; // Path to your SVG
 import Avatar from '../../assets/skills-user.png';
 import TinkoffLogo from '../../assets/tinkoff-logo.png';
 import YandexLogo from '../../assets/yandex-logo.png';
+import { Card } from '../../utils/types';
 import UserCard from '../UserCard/UserCard';
+
+interface SkillsSectionProps {
+    title: string;
+    cards: Card[];
+}
 
 const cards = [
     {
@@ -13,24 +21,27 @@ const cards = [
         users: [
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Yandex",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Tinkoff",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Ozon",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
+                rate: 7.5
             },
         ],
     },
@@ -42,17 +53,19 @@ const cards = [
         users: [
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Yandex",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Tinkoff",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
+                rate: 7.5
             }
         ],
     },
@@ -64,17 +77,19 @@ const cards = [
         users: [
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Yandex",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Tinkoff",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
+                rate: 7.5
             }
         ],
     },
@@ -83,62 +98,133 @@ const cards = [
         title: "Исследования",
         description: "Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе",
         rate: 0,
+        icon: ResearchIcon,
         users: [
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Yandex",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Tinkoff",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
+                rate: 7.5
             },
             {
                 name: "Виктория",
-                position: "Product дизайнер",
+                position: "Product дизайнер в Ozon",
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
+                rate: 7.5
             },
         ],
     },
 ];
 
 const SkillsSection: React.FC<{ title: string }> = ({ title }) => {
+    const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
+
+    const handleCardClick = (index: number) => {
+        setExpandedCardIndex(index === expandedCardIndex ? null : index);
+    };
 
     return (
-        <section className="mt-[30px]">
-            <div className="flex items-center mb-4">
-                <ThumbsUpIcon className="w-12 h-12 text-green-500 mr-4 max-md:hidden" />
-                <div>
-                    <h2 className="text-xl font-bold text-gray-800">{title}</h2>
-                    <p className="text-gray-600">Навык «Продукт» отскорен 7 специалистами на средний балл 7,5 из 10, что соответствует ожиданию рынка</p>
+        <article className="mt-[20px] pb-[50px]">
+            <div className="flex items-center justify-start mb-[40px]">
+                <ThumbsUpIcon className="w-[103px] h-[103px] mr-[40px] max-md:hidden" />
+                <div className='w-[435px]'>
+                    <h2 className="text-[#000] text-[30px] font-[700] leading-[100%] -tracking-[1.25]">{title}</h2>
+                    <p className="mt-2 text-[#000] text-[20px] font-[400] leading-[105%] max-w-[435px]">Навык «Продукт» отскорен 7 специалистами на средний балл 7,5 из 10, что соответствует ожиданию рынка</p>
                 </div>
             </div>
 
-            <hr className="my-4" />
+            <hr className="my-4 mb-[40px]" />
 
             {cards.map((card, index) => (
-                <div key={index} className="flex flex-col md:flex-row items-start mb-12 md:mb-14">
+                <div key={index} className="flex flex-col md:flex-row items-start mb-12 last:mb-0 hover:cursor-pointer" onClick={() => handleCardClick(index)}>
                     <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0">
-                        <ThumbsUpIcon className="w-6 h-6 text-green-500 mr-2" />
-                        <h4 className="text-gray-800 text-lg font-medium leading-normal">{card.title}</h4>
+                        <ThumbsUpIcon className="w-[27px] h-[27px] mr-1" />
+                        <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{card.title}</h4>
                     </div>
+
                     <div className="w-full md:w-2/3">
-                        <p className="text-base text-gray-800 font-normal leading-relaxed">{card.description}</p>
+                        <p className="text-[16px] text-[#1E1E1E] font-[400] leading-[115%] max-w-[395px]">{card.description}</p>
                         <div className='flex flex-wrap gap-4 mt-4'>
-                            <UserCard users={card.users} />
+                            {card.users.map((user, userIndex) => (
+                                <UserCard key={userIndex} user={user} isModal={false} />
+                            ))}
                         </div>
+                        {expandedCardIndex === index && (
+                            <>
+                                <div
+                                    className="max-md:hidden expanded-card absolute left-[50%] -translate-x-[50%] translate-y-[10%] w-[60%] bg-white drop-shadow-2xl rounded-[36px] z-10"
+                                    style={{
+                                        top: `${expandedCardIndex * 8}rem)`
+                                    }}
+                                >
+
+                                    <div>
+                                        {cards[expandedCardIndex].users.map((user, userIndex) => (
+                                            <div key={userIndex} className={`grid grid-cols-3 items-center mx-[30px] py-[20px] ${userIndex !== 0 && 'border-t'}`}>
+                                                <UserCard key={userIndex} user={user} isModal={true} />
+                                                <div className='flex'>
+                                                    <ThumbsUpIcon className='mr-[6px] drop-shadow-icon' />
+                                                    <p className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'>{user.rate}/10</p>
+                                                </div>
+                                                <div>
+                                                    <p className='text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className='bg-[#44C894] rounded-b-[36px] grid grid-cols-3 items-center px-[30px] py-[15px]'>
+                                        <h2 className='text-[#fff] text-[21.5px] font-[500] leading-[115%]'>Средняя оценка</h2>
+                                        <h1 className='text-[#fff] text-[39.5px] font-[500] leading-[105%]'>7,5/10</h1>
+                                        <p className='text-[#fff] text-[13px] font-[500] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе </p>
+                                    </div>
+                                </div>
+
+                                <div className="md:hidden expanded-card absolute left-[50%] -translate-x-[50%] translate-y-[5%] w-[100%] bg-white drop-shadow-2xl rounded-[36px] z-10"
+                                    style={{
+                                        top: `${expandedCardIndex * 8}rem)`
+                                    }}>
+                                    <div>
+                                        {cards[expandedCardIndex].users.map((user, userIndex) => (
+                                            <div key={userIndex} className={`grid grid-cols-1 items-center mx-[30px] py-[20px] space-y-[14px] ${userIndex !== 0 && 'border-t'}`}>
+                                                <UserCard key={userIndex} user={user} isModal={true} />
+
+                                                <div className='flex'>
+                                                    <ThumbsUpIcon className='mr-[6px] drop-shadow-icon' />
+                                                    <p className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'>{user.rate}/10</p>
+                                                </div>
+
+                                                <div>
+                                                    <p className='text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className='bg-[#44C894] rounded-b-[36px] grid grid-cols-1 items-center px-[30px] py-[15px] space-y-[14px]'>
+                                        <h2 className='text-[#fff] text-[21.5px] font-[500] leading-[115%]'>Средняя оценка</h2>
+                                        <h1 className='text-[#fff] text-[39.5px] font-[500] leading-[105%]'>7,5/10</h1>
+                                        <p className='text-[#fff] text-[13px] font-[500] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе </p>
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             ))}
-
-        </section>
+        </article>
     );
 };
 

@@ -16,10 +16,11 @@ const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
             const index = menuItems.findIndex(item => item.name === selectedItem);
             const selectedElement = navRef.current.children[index] as HTMLElement;
 
-            if (selectedElement) {
-                const leftPosition = selectedElement.offsetLeft + selectedElement.clientWidth / (1) - navRef.current.clientWidth / (1);
-                navRef.current.scroll({ left: leftPosition, behavior: 'smooth' });
-            }
+            selectedElement.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
         }
     }, [selectedItem, menuItems]);
 
@@ -30,7 +31,7 @@ const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
                     {menuItems.map((item) => (
                         <button
                             key={item.name}
-                            className={`menu-item px-[20px] py-[13px] text-nowrap ${item.name === selectedItem ? 'selected' : ''}`}
+                            className={`menu-item text-[20px] font-[500] leading-[105%] px-[20px] py-[15px] max-md:p-[10px] max-md:text-[14.8px] text-nowrap ${item.name === selectedItem ? 'selected bg-[#F2F4F9] rounded-full' : ''}`}
                             onClick={() => setSelectedItem(item.name)}
                         >
                             {item.name}
@@ -38,7 +39,8 @@ const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
                     ))}
                 </div>
             </div>
-            <div className="content-block">
+
+            <div>
                 {renderContent(selectedItem)}
             </div>
         </>

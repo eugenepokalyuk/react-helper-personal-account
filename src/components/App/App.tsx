@@ -14,7 +14,6 @@ const App: React.FC = () => {
       <main>
         <ProfileCard />
         <JobRecommendation />
-
         <Scoring />
         <WorkExperience />
         <Cases />

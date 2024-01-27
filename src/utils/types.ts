@@ -13,3 +13,18 @@ export type Experience = {
 export type MenuItem = {
     name: string;
 };
+
+export type User = {
+    name: string;
+    position: string;
+    avatarUrl: string;
+    topLeftIcon: React.ReactNode;
+    bottomRightIcon: React.ReactNode;
+}
+
+export type Card = {
+    title: string;
+    description: string;
+    rate: number;
+    users: User[];
+}

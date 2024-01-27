@@ -1,4 +1,4 @@
-@import url(https://db.onlinewebfonts.com/c/d3661cda6871e1f820836d12b6322858?family=ALS+Hauss+Variable);
+/* @import url(https://db.onlinewebfonts.com/c/d3661cda6871e1f820836d12b6322858?family=ALS+Hauss+Variable); */
 
 @tailwind base;
 @tailwind components;
@@ -6,12 +6,26 @@
 
 @font-face {
     font-family: "ALS Hauss Variable";
-    src: url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.eot");
-    src: url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.eot?#iefix")format("embedded-opentype"),
-        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.woff2")format("woff2"),
-        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.woff")format("woff"),
-        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.ttf")format("truetype"),
-        url("https://db.onlinewebfonts.com/t/d3661cda6871e1f820836d12b6322858.svg#ALS Hauss Variable")format("svg");
+    font-weight: 400;
+    src: url("./assets/fonts/als-hauss/als_hauss_regular.otf");
+}
+
+@font-face {
+    font-family: "ALS Hauss Variable";
+    font-weight: 500;
+    src: url("./assets/fonts/als-hauss/als_hauss_medium.otf");
+}
+
+@font-face {
+    font-family: "ALS Hauss Variable";
+    font-weight: 700;
+    src: url("./assets/fonts/als-hauss/als_hauss_bold.otf");
+}
+
+@font-face {
+    font-family: "ALS Hauss Variable";
+    font-weight: 900;
+    src: url("./assets/fonts/als-hauss/als_hauss_black.otf");
 }
 
 html {
@@ -30,6 +44,19 @@ img {
     font-family: "ALS Hauss Variable";
 }
 
-.{
-    font-family: "ALS Hauss Variable";
+.expanded-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #FFF;
+    z-index: 11;
+}
+
+.drop-shadow-icon {
+    filter: drop-shadow(0 1px 2px #4FCC9B0d) drop-shadow(0 1px 1px #4FCC9B0d);
+    /* filter: drop-shadow(0 1px 1px #4FCC9B0d); */
 }

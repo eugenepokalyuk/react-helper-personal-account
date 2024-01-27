@@ -4,26 +4,33 @@
     overflow: hidden;
 }
 
-.menu-items {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-.menu-item {
-    /* margin-right: 10px; */
-    opacity: 0.2;
-    transition: opacity 0.3s ease;
-}
-
-.menu-item.selected {
-    opacity: 1;
-    background-color: #F2F4F9;
-    border-radius: 100px;
-}
-
 .scroll-button {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.menu-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    overflow-x: hidden;
+
+}
+
+.menu-item {
+    flex: none;
+    opacity: 0.2;
+}
+
+.menu-items::before,
+.menu-items::after {
+    content: '';
+    width: 20px;
+}
+
+.selected {
+    opacity: 1;
 }

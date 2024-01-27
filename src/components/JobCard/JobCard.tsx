@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as IconLike } from '../../assets/like.svg';
-import H1 from '../../ui/Headers/H1';
+import H1 from '../../typography/Headers/H1';
 import SalaryIndicator from '../SalaryIndicator/SalaryIndicator';
 
 interface JobCardProps {
@@ -17,21 +17,22 @@ const JobCard: React.FC<JobCardProps> = ({
     description
 }) => {
     return (
-        <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] mt-4 px-[13px] py-[13px] max-md:my-1 max-md:px-[15px] max-md:py-[13px]">
-            <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                    <IconLike className='mr-1' />
-                    <h2 className='text-[15px] font-[500] leading-[105%]'>{title}</h2>
-                </div>
-            </div>
-
-            <div className='mt-[14px]'>
-                <H1 title={subtitle} />
-                {/* <h1 className='text-[30px] font-semibold mb-4 leading-[30px] text-black'>{subtitle}</h1> */}
-            </div>
-
+        <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] px-[15px] py-[13px] pb-[16px] max-md:my-1 max-md:px-[15px] max-md:py-[13px]">
             <div>
-                {isSalary && <SalaryIndicator />}
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                        <IconLike className='mr-1' />
+                        <h2 className='text-[15px] text-[#000] font-[500] leading-[105%]'>{title}</h2>
+                    </div>
+                </div>
+
+                <div className='mt-[14px]'>
+                    <H1 title={subtitle} />
+                </div>
+
+                <div>
+                    {isSalary && <SalaryIndicator />}
+                </div>
             </div>
 
             <div className="mt-4">

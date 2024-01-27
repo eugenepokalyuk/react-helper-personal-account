@@ -4,7 +4,7 @@ import Screenshot from '../../assets/screenshot.png';
 import TinkoffLogo from '../../assets/tinkoff-logo.png';
 import VideoThumbnail from '../../assets/video-thumbnail.png';
 import YandexLogo from '../../assets/yandex-logo.png';
-import H1 from '../../ui/Headers/H1';
+import H1 from '../../typography/Headers/H1';
 import { Experience } from '../../utils/types';
 import WorkExperienceCard from '../WorkExperienceCard/WorkExperienceCard';
 
@@ -48,12 +48,15 @@ const experiences: Experience[] = [{
 
 const WorkExperience: React.FC = () => {
     return (
-        <section className="mx-auto max-w-[700px] bg-white rounded-[20px] mt-4 p-[20px]">
+        <section className="mx-auto max-w-[700px] bg-white rounded-[30px] mt-4 p-[20px]">
             <div className='flex flex-col w-[185px]'>
                 <H1 title={'Опыт работы 4 года 5 мес'} />
             </div>
             {experiences.map((experience, index) => (
-                <WorkExperienceCard key={index} experience={experience} />
+                <React.Fragment key={index}>
+                    <WorkExperienceCard key={index} experience={experience} />
+                    {index + 1 !== experiences.length && (<hr />)}
+                </React.Fragment>
             ))}
         </section>
     );
