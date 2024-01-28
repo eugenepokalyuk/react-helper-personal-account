@@ -48,7 +48,7 @@ const experiences: Experience[] = [{
 
 const WorkExperience: React.FC = () => {
     return (
-        <section className="mx-auto max-w-[700px] bg-white rounded-[30px] mt-4 p-[20px]">
+        <section className="mx-auto max-w-[700px] bg-white rounded-[30px] mt-4 p-5">
             <div className='flex flex-col w-[185px]'>
                 <H1 title={'Опыт работы 4 года 5 мес'} />
             </div>

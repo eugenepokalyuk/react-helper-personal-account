@@ -23,17 +23,18 @@ const caseStudies = [{
 
 const Cases: React.FC = () => {
     return (
-        <section className='mx-auto max-w-[700px] mt-4 p-[20px] flex flex-col bg-white gap-[10px] rounded-[30px]'>
+        <section className='mx-auto max-w-[700px] mt-4 p-5 flex flex-col bg-white rounded-[30px]'>
             <H1 title={'Кейсы'} />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col mt-4">
                 {caseStudies.map((caseStudy, index) => (
-                    <div key={index} className='mb-[40px]'>
+                    <div key={index} className='pb-[40px]'>
                         <img
                             src={caseStudy.image}
                             alt="Case Study"
                             className="object-cover w-full rounded-[16px] md:w-[643px] md:h-[270px] max-md:max-h-[110px]"
                         />
-                        <div className='px-[6px]'>
+                        <div className=''>
+                            {/* px-[6px] */}
                             <h3 className="text-[20px] text-[#000] font-[700] leading-[105%] -tracking-[0.25] mt-3">{caseStudy.title}</h3>
                             <p className="text-[16px] font-[400] my-1 text-[#1E1E1E]/50 leading-[115%]">{caseStudy.description}</p>
                             <div className="flex items-center mt-2">

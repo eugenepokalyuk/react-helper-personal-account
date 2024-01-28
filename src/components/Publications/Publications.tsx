@@ -10,7 +10,7 @@ const publications = [
 
 const Publications: React.FC = () => {
     return (
-        <section className='mx-auto max-w-[700px] mt-4 p-[20px] flex flex-col md:flex-row bg-white gap-[10px] rounded-[30px] pb-[55px]'>
+        <section className='mx-auto max-w-[700px] mt-4 p-5 flex flex-col md:flex-row bg-white gap-[10px] rounded-[30px] pb-[55px]'>
             <div>
                 <H1 title={'Публикации'} />
                 <div className="mt-4">

@@ -3,7 +3,7 @@ import JobCard from '../JobCard/JobCard';
 
 const JobRecommendation: React.FC = () => {
     return (
-        <section className='mx-auto max-w-[700px] flex flex-col md:flex-row gap-[10px] mt-[16px]'>
+        <section className='mx-auto max-w-[700px] flex flex-col md:flex-row gap-[12px] mt-[16px]'>
             <JobCard
                 title="Рекомендуемая позиция"
                 subtitle="Middle продуктовый дизайнер"
