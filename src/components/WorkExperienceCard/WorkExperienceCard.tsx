@@ -17,7 +17,7 @@ const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ experience }) => {
             </div>
 
             <div className="md:w-2/3">
-                <div className='flex text-[24px] items-center justigy-center'>
+                <div className='flex text-[24px] items-start justigy-center'>
                     <div className='max-w-[48px] max-h-[48px] mr-[5.25px]'>
                         <img
                             className="rounded-full"
@@ -28,6 +28,10 @@ const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ experience }) => {
                     </div>
                     <div>
                         <h3 className="text-black text-[24px] font-[700] leading-[105%] tracking-tighter">{experience.grade}<br />{experience.job}</h3>
+                        {/* <div className="md:hidden md:w-1/3 text-left mt-4">
+                            <h4 className="text-[17px] font-[500] leading-[105%] -tracking-[0.5]">{experience.period}</h4>
+                            <p className="text-[16px] text-black/30 leading-[115%] mt-[3px]">{experience.duration}</p>
+                        </div> */}
                     </div>
                 </div>
 
@@ -35,7 +39,6 @@ const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ experience }) => {
                     <h4 className="text-[17px] font-[500] leading-[105%] -tracking-[0.5]">{experience.period}</h4>
                     <p className="text-[16px] text-black/30 leading-[115%] mt-[3px]">{experience.duration}</p>
                 </div>
-
 
                 <ul className='mt-[18px]'>
                     {experience.points.map((point, index) => (

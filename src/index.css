@@ -42,6 +42,7 @@ img {
 
 * {
     font-family: "ALS Hauss Variable";
+    hyphens: auto;
 }
 
 .expanded-card::before {

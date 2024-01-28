@@ -9,17 +9,19 @@ import WorkExperience from '../WorkExperience/WorkExperience';
 
 const App: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 pb-[100px]">
+    <>
       <Header />
-      <main>
-        <ProfileCard />
-        <JobRecommendation />
-        <Scoring />
-        <WorkExperience />
-        <Cases />
-        <Publications />
-      </main>
-    </div>
+      <div className="container mx-auto px-4 pb-[100px] pt-[50px]">
+        <main>
+          <ProfileCard />
+          <JobRecommendation />
+          <Scoring />
+          <WorkExperience />
+          <Cases />
+          <Publications />
+        </main>
+      </div>
+    </>
   );
 };
 

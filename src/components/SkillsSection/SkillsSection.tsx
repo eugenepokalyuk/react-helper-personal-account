@@ -26,7 +26,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -34,7 +34,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -42,7 +42,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
-                rate: 7.5
+                rate: '7,5'
             },
         ],
     },
@@ -58,7 +58,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -66,7 +66,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: 7.5
+                rate: '7,5'
             }
         ],
     },
@@ -82,7 +82,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -90,7 +90,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: 7.5
+                rate: '7,5'
             }
         ],
     },
@@ -107,7 +107,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -115,7 +115,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: 7.5
+                rate: '7,5'
             },
             {
                 name: "Виктория",
@@ -123,7 +123,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
-                rate: 7.5
+                rate: '7,5'
             },
         ],
     },
