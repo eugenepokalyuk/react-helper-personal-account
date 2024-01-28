@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as Logo } from "../../assets/logo-white.svg";
 
@@ -36,9 +36,24 @@ const PhotoCard: FC<{ photoUrl: string }> = ({ photoUrl }) => {
 };
 
 const PhotoModal: FC<PhotoModalProps> = ({ photoUrl, onClose }) => {
+    const modalRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+                onClose();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [onClose]);
+
     return (
-        <>
-            <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-10">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-10">
+            <div ref={modalRef} className="rounded-[30px] max-w-full mx-4 my-8">
                 <div className="absolute top-10 left-10">
                     <Logo className="hover:cursor-pointer" />
                 </div>
@@ -55,7 +70,7 @@ const PhotoModal: FC<PhotoModalProps> = ({ photoUrl, onClose }) => {
                     />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
