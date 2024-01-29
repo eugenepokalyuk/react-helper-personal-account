@@ -38,7 +38,7 @@ const Publications: React.FC = () => {
                                 <img
                                     src={publication.image}
                                     alt="Case Study"
-                                    className="object-cover w-full rounded-[16px] md:w-[100%] md:h-[387px] max-md:max-h-[110px] group-hover:brightness-[.75] group-hover:opacity-[95%] transition duration-300 ease-in-out"
+                                    className="object-cover w-full rounded-[16px] md:w-[100%] group-hover:brightness-[.75] group-hover:opacity-[95%] transition duration-300 ease-in-out"
                                 />
                             </div>
                             <div className=''>
