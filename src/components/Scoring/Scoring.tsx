@@ -28,8 +28,8 @@ const Scoring: React.FC = () => {
 
     return (
         // px-[20px] pt-[20px] pb-[0px]
-        <section className="mx-auto max-w-[700px] p-5 bg-white rounded-[30px] mt-3">
-            <article>
+        <section className="mx-auto max-w-[700px] py-5 bg-white rounded-[30px] mt-3">
+            <article className="px-5">
                 <H1 title={'Скоринг'} />
                 <div className="flex items-start mt-[9px]">
                     <Region className="w-[22px] h-[22px] mr-2" />
