@@ -226,7 +226,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
                                     </div>
                                 </div>
 
-                                <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-10"
+                                <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30"
                                     style={{
                                         top: `${expandedCardIndex * 8}rem)`
                                     }}>
