@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cases from '../Cases/Cases';
 import Header from '../Header/Header';
 import JobRecommendation from '../JobRecommendation/JobRecommendation';
@@ -8,15 +8,17 @@ import Scoring from '../Scoring/Scoring';
 import WorkExperience from '../WorkExperience/WorkExperience';
 
 const App: React.FC = () => {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
   return (
     <>
-      <Header />
+      {!isModalOpen && <Header />}
       <div className="container mx-auto px-4 pb-[100px] pt-[50px]">
         <main>
           <ProfileCard />
           <JobRecommendation />
           <Scoring />
-          <WorkExperience />
+          <WorkExperience setModalOpen={setModalOpen} />
           <Cases />
           <Publications />
         </main>

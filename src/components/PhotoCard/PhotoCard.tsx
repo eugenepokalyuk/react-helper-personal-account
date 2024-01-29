@@ -1,21 +1,19 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as Logo } from "../../assets/logo-white.svg";
-import { ReactComponent as PlayIcon } from "../../assets/play-icon.svg";
 
-interface VideoModalProps {
-    videoUrl: string; onClose: () => void
+interface PhotoModalProps {
+    photoUrl: string;
+    onClose: () => void;
 }
-const VideoCard: FC<{
-    thumbnail: string;
-    videoUrl: string;
+
+const PhotoCard: FC<{
+    photoUrl: string
     setModalOpen: (isOpen: boolean) => void;
 }> = ({
-    thumbnail,
-    videoUrl,
+    photoUrl,
     setModalOpen
 }) => {
-        // const VideoCard: FC<{ thumbnail: string; videoUrl: string }> = ({ thumbnail, videoUrl }) => {
         // const [isModalOpen, setModalOpen] = useState(false);
         const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -31,26 +29,31 @@ const VideoCard: FC<{
 
         return (
             <div className="relative" style={{ borderRadius: '12px', overflow: 'hidden', width: '110px', height: '160px' }}>
-                {isModalOpen ? (
-                    <VideoModal videoUrl={videoUrl} onClose={closeModal} />
-                    // <VideoModal videoUrl={videoUrl} onClose={() => setModalOpen(false)} />
-                ) : (
+                {!isModalOpen && (
                     <>
-                        <img src={thumbnail} alt="Thumbnail" className="w-full h-full object-cover" />
+                        <img
+                            src={photoUrl}
+                            alt="Thumbnail"
+                            className="w-full h-full object-cover"
+                            style={{ borderRadius: '12px' }}
+                        />
                         <button
                             onClick={openModal}
                             // onClick={() => setModalOpen(true)}
-                            className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center hover:scale-[105%] transition duration-300 ease-in-out"
+                            className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center hover:bg-black/25 transition duration-300 ease-in-out"
+                            aria-label="View image"
                         >
-                            <PlayIcon className="w-12 h-12 text-white transition-transform duration-300 ease-in-out hover:scale-110" />
                         </button>
                     </>
+                )}
+                {isModalOpen && (
+                    <PhotoModal photoUrl={photoUrl} onClose={closeModal} />
                 )}
             </div>
         );
     };
 
-const VideoModal: FC<VideoModalProps> = ({ videoUrl, onClose }) => {
+const PhotoModal: FC<PhotoModalProps> = ({ photoUrl, onClose }) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -77,15 +80,16 @@ const VideoModal: FC<VideoModalProps> = ({ videoUrl, onClose }) => {
                     <Close className="fill-white hover:cursor-pointer" />
                 </div>
 
-                <video
-                    controls
-                    src={videoUrl}
-                    autoPlay
-                    className="max-w-full h-[75vh] rounded-[30px]"
-                />
+                <div className="rounded-[30px] max-w-full mx-4 my-8 p-4">
+                    <img
+                        src={photoUrl}
+                        alt="Enlarged view"
+                        className="max-w-full h-[75vh] rounded-[30px]"
+                    />
+                </div>
             </div>
         </div>
     );
 };
 
-export default VideoCard;
+export default PhotoCard;

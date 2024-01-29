@@ -20,7 +20,7 @@ const ProfileCard: React.FC = () => {
             </picture>
 
             <div className="text-center max-md:text-left mt-4">
-                <h1 className="text-[38px] font-[700] leading-[100%] -tracking-[1.5px]">
+                <h1 className="text-[38px] font-[700] leading-[100%] -tracking-[1.5px] text-center">
                     {/* {mock.name} */}
                     Александр Гаврилов
                 </h1>

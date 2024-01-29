@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import OzonLogo from '../../assets/ozon-logo.png';
 import Screenshot from '../../assets/screenshot.png';
 import TinkoffLogo from '../../assets/tinkoff-logo.png';
@@ -46,7 +46,8 @@ const experiences: Experience[] = [{
     logo: OzonLogo
 }];
 
-const WorkExperience: React.FC = () => {
+// const WorkExperience: FC = () => {
+const WorkExperience: FC<{ setModalOpen: (isOpen: boolean) => void }> = ({ setModalOpen }) => {
     return (
         <section className="mx-auto max-w-[700px] bg-white rounded-[30px] mt-4 p-5">
             <div className='flex flex-col w-[185px]'>
@@ -54,7 +55,11 @@ const WorkExperience: React.FC = () => {
             </div>
             {experiences.map((experience, index) => (
                 <React.Fragment key={index}>
-                    <WorkExperienceCard key={index} experience={experience} />
+                    <WorkExperienceCard
+                        key={index}
+                        experience={experience}
+                        setModalOpen={setModalOpen}
+                    />
                     {index + 1 !== experiences.length && (<hr />)}
                 </React.Fragment>
             ))}

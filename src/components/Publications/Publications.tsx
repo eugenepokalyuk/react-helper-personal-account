@@ -1,12 +1,30 @@
 import React from 'react';
 import H1 from '../../typography/Headers/H1';
 
-const publications = [
-    { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-    { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-    { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-    { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" }
-];
+import PublicationImage1 from '../../assets/publications-image-1.png';
+import PublicationImage2 from '../../assets/publications-image-2.png';
+import PublicationImage3 from '../../assets/publications-image-3.png';
+
+// const publications = [
+// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
+// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
+// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
+// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" }
+// ];
+
+const publications = [{
+    heading: "Как улучшить опыт посетителя Эрмитажа: UX анализ и редизайн сервиса онлайн покупки билетов",
+    paragraph: "Привет, я Алексей, дизайнер интерфейсов. В этой статье расскажу как можно улучшить сервис продаж билетов в Эрмитаже.",
+    image: PublicationImage1
+}, {
+    heading: "Исследование российских дизайн-команд: кто делает продукты с сильным дизайном и где хорошая дизайн-культура",
+    paragraph: "Ежегодное исследование продуктовых дизайн-команд в России. Как профессиональное сообщество оценивает результаты их работы?",
+    image: PublicationImage2
+}, {
+    heading: "«Корзинка». Как студия из России дизайнит топ-1 продуктовую сеть Узбекистана",
+    paragraph: "Ежегодное исследование продуктовых дизайн-команд в России. Как профессиональное сообщество оценивает результаты их работы?",
+    image: PublicationImage3
+}]
 
 const Publications: React.FC = () => {
     return (
@@ -15,12 +33,17 @@ const Publications: React.FC = () => {
                 <H1 title={'Публикации'} />
                 <div className="mt-4">
                     {publications.map((publication, index) => (
-                        <div key={index} className="flex justify-between mt-[27px]">
-                            <div className="w-1/2">
-                                <p className='text-[#1E1E1E]/50 text-[14px] font-[400] leading-[115%]'>{publication.year}</p>
+                        <div key={index} className='pb-[40px] group cursor-pointer hover:cursor-pointer'>
+                            <div className="relative">
+                                <img
+                                    src={publication.image}
+                                    alt="Case Study"
+                                    className="object-cover w-full rounded-[16px] md:w-[100%] md:h-[387px] max-md:max-h-[110px] group-hover:brightness-[.75] group-hover:opacity-[95%] transition duration-300 ease-in-out"
+                                />
                             </div>
-                            <div className="w-full">
-                                <p className='text-[#1E1E1E]/50 text-[14px] font-[400] leading-[115%] pr-[60px] max-md:pr-1'>{publication.text}</p>
+                            <div className=''>
+                                <h3 className="text-[20px] text-[#000] font-[700] leading-[105%] -tracking-[0.25] mt-3 group-hover:text-black/80 transition-colors duration-300">{publication.heading}</h3>
+                                <p className="text-[16px] font-[400] my-1 text-[#1E1E1E]/50 leading-[115%]">{publication.paragraph}</p>
                             </div>
                         </div>
                     ))}
