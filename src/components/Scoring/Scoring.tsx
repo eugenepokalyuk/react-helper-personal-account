@@ -89,7 +89,7 @@ const UnityContainer: React.FC = () => {
     }, []);
 
     return (
-        <div className="w-[960px] h-[250px] md:h-[600px]">
+        <div className="w-[960px] h-[350px] md:h-[600px]">
             <Unity unityContext={unityContext} style={{ width: '100%', height: '100%' }} />
         </div>
     );
