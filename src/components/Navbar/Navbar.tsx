@@ -10,7 +10,6 @@ interface NavbarProps {
 const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
     const navRef = useRef<HTMLDivElement>(null);
     const [selectedItem, setSelectedItem] = useState<string>(menuItems[0].name);
-
     // useEffect(() => {
     //     if (navRef.current) {
     //         const index = menuItems.findIndex(item => item.name === selectedItem);

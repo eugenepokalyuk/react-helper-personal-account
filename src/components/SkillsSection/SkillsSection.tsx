@@ -158,7 +158,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
     };
 
     return (
-        <article className="mt-[20px] pb-[50px] px-5">
+        <article className="mt-[20px] pb-[50px]">
             <div className="flex px-2 mb-[40px] max-md:flex-col">
                 <div className='w-[105px] h-[105px] mr-[30px] max-md:w-[70px] max-md:h-[70px] max-md:mr-[0px] max-md:mb-3'>
                     <ThumbsUpIcon className="w-full h-full" />
