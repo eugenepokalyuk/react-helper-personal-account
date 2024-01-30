@@ -24,7 +24,7 @@ const ProfileCard: React.FC = () => {
                     {/* {mock.name} */}
                     Александр Гаврилов
                 </h1>
-                <div className="mt-4 flex flex-wrap gap-[6px] justify-center max-md:justify-start">
+                <div className="mt-4 flex flex-wrap gap-[6px] justify-center">
                     {tags.map((tag, index) => (
                         tag && <span key={index} className="bg-white px-[20px] py-[12px] rounded-full text-[14.8px] text-[#000000] font-[500] leading-[105%]">{tag}</span>
                     ))}

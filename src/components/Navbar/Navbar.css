@@ -15,8 +15,19 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
 
-    overflow-x: hidden;
+.menu-items::-webkit-scrollbar {
+    height: 4px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.menu-items::-webkit-scrollbar-thumb:hover {
+    background: transparent;
 }
 
 .menu-item {

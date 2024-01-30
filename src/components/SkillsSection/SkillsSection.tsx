@@ -222,21 +222,30 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
                                         <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе </p>
                                     </div>
                                 </div>
-
-                                <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30"
+                                <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30 overflow-y-auto"
+                                    // <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30"
                                     style={{
                                         top: `${expandedCardIndex * 8}rem)`
                                     }}>
                                     <div>
+                                        <div className='px-5 py-5'>
+                                            <div className='flex justify-between items-center'>
+                                                <div className='flex items-center'>
+                                                    <ThumbsUpIcon className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                    <H1 title={card.title} />
+                                                </div>
+                                                <div className="bg-gray-500/50 rounded-full p-1">
+                                                    <Close className="fill-white hover:cursor-pointer" onClick={onClick} />
+                                                </div>
+                                            </div>
 
-                                        <div className='flex justify-between items-center px-5 py-5'>
-                                            <H1 title={card.title} />
-                                            <div className="bg-gray-500/50 rounded-full p-1">
-                                                <Close className="fill-white hover:cursor-pointer" onClick={onClick} />
+                                            <div className='mt-[10px]'>
+                                                <p className='text-[#000] text-[20px] font-[400] leading-[105%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе </p>
                                             </div>
                                         </div>
 
-                                        <div className='px-5 py-5'>
+                                        <div className='px-5 mt-[30px]'>
+                                            <h1 className='text-[24px] text-[#000] font-[700] leading-[105%] -tracking-[-0.5px]'>Оценки от специалистов</h1>
                                             {cards[expandedCardIndex].users.map((user, userIndex) => (
                                                 <div key={userIndex} className={`grid grid-cols-1 items-center py-5 space-y-[14px] ${userIndex !== 0 && 'border-t'}`}>
                                                     <div className='flex justify-between items-center'>
