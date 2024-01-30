@@ -35,7 +35,7 @@ const UnityContainer: React.FC = () => {
             unityContext.send("Bridge", "Appear", "true");
             // unityContext.send("Bridge", "Freeze"); // Freeze the chart
             // unityContext.send("Bridge", "Unfreeze"); // Unreeze the chart
-            // unityContext.send("Bridge", "SetGrade", "Мидл ~120 000₽,Обновили цель 12 авг"); // shows overlay 3D text panel. args format: "<text1>,<text2>"
+            unityContext.send("Bridge", "SetGrade", "Мидл 200 000₽, Обновили цель 31 января"); // shows overlay 3D text panel. args format: "<text1>,<text2>"
 
             // chart values:
             unityContext.send("Bridge", "SetValue", "0, 5"); // sets sector value. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
