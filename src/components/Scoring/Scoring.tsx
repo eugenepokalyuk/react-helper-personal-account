@@ -187,23 +187,6 @@ const UnityContainer: React.FC = () => {
     );
 };
 
-interface LabelProps {
-    position: {
-        top: string;
-        left: string;
-        transform: string;
-    };
-    text: string;
-}
-
-const Label: React.FC<LabelProps> = ({ position, text }) => (
-    <div className="absolute text-nowrap flex items-center justify-center" style={position}>
-        {/* Иконка и текст подписи */}
-        <IconCheck className="w-[12px] h-[12px] mr-1" />
-        <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">{text}</p>
-    </div>
-);
-
 const Scoring: React.FC = () => {
     const menuItems: MenuItem[] = [
         { name: 'Продукт' },
