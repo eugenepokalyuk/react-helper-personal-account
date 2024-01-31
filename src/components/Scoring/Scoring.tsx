@@ -148,41 +148,41 @@ const UnityContainer: React.FC = () => {
                 </div>
             </div>
 
-            {/* <div className="sm:hidden absolute top-0 left-0 w-full h-full">
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '23%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+            <div className="sm:hidden absolute top-0 left-0 w-full h-full">
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '32%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '23%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '66%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '40%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '10%', transform: 'translate(-50%, -50%)' }}>
                     <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
                 </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '41%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '40%', left: '91%', transform: 'translate(-50%, -50%)' }}>
                     <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '67%', left: '8%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '68%', left: '8%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
                 </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '68%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '69%', left: '91%', transform: 'translate(-50%, -50%)' }}>
                     <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '87%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '33%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
                 </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '87%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '66%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };
