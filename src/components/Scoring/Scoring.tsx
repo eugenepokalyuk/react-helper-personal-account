@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import Unity, { UnityContext } from 'react-unity-webgl';
 import { ReactComponent as IconCheck } from "../../assets/check-icon.svg";
 import { ReactComponent as Region } from "../../assets/region.svg";
@@ -109,48 +109,100 @@ const UnityContainer: React.FC = () => {
     }, []);
 
     return (
-        <div
-            className="relative w-[550px] h-[550px] md:h-[600px]"
-            style={{ pointerEvents: 'none' }}
-        >
-            <Unity unityContext={unityContext} style={{ width: '100%', height: '100%' }} />
+        <div className="relative w-full max-w-[550px] h-[550px] max-md:h-[350px]">
+            <Unity unityContext={unityContext} className="w-full h-full" />
 
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '18%', left: '33%', transform: 'translate(-50%, -50%)' }}>
-                <IconCheck className="w-[12px] h-[12px] mr-1" />
-                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+            <div className="max-md:hidden absolute top-0 left-0 w-full h-full">
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+                </div>
+
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
+                </div>
+
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '91.5%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
+
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '71%', left: '9%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '72%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#DA5041] text-[14px] font-[500] leading-[105%]">Ниже рынка</p>
+                </div>
+
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+                </div>
             </div>
 
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '18%', left: '67%', transform: 'translate(-50%, -50%)' }}>
-                <IconCheck className="w-[12px] h-[12px] mr-1" />
-                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
-            </div>
+            {/* <div className="sm:hidden absolute top-0 left-0 w-full h-full">
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '23%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                </div>
 
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38%', left: '10%', transform: 'translate(-50%, -50%)' }}>
-                <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
-            </div>
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
-            </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '23%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                </div>
 
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '70%', left: '11%', transform: 'translate(-50%, -50%)' }}>
-                <IconCheck className="w-[12px] h-[12px] mr-1" />
-                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
-            </div>
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '71%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                <p className="text-[#DA5041] text-[14px] font-[500] leading-[105%]">Ниже рынка</p>
-            </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '40%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '41%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
 
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '91%', left: '33%', transform: 'translate(-50%, -50%)' }}>
-                <IconCheck className="w-[12px] h-[12px] mr-1" />
-                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
-            </div>
-            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '91%', left: '67%', transform: 'translate(-50%, -50%)' }}>
-                <IconCheck className="w-[12px] h-[12px] mr-1" />
-                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
-            </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '67%', left: '8%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '68%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
+                </div>
+
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '87%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                </div>
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '87%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                </div>
+            </div> */}
         </div>
     );
 };
+
+interface LabelProps {
+    position: {
+        top: string;
+        left: string;
+        transform: string;
+    };
+    text: string;
+}
+
+const Label: React.FC<LabelProps> = ({ position, text }) => (
+    <div className="absolute text-nowrap flex items-center justify-center" style={position}>
+        {/* Иконка и текст подписи */}
+        <IconCheck className="w-[12px] h-[12px] mr-1" />
+        <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">{text}</p>
+    </div>
+);
 
 const Scoring: React.FC = () => {
     const menuItems: MenuItem[] = [
