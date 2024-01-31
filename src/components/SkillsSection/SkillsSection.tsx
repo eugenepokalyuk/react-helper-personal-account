@@ -43,7 +43,7 @@ const cards = [
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
                 rate: '7,5'
-            },
+            }
         ],
     },
 
@@ -222,8 +222,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
                                         <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе </p>
                                     </div>
                                 </div>
-                                <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30 overflow-y-auto"
-                                    // <div className="md:hidden expanded-card fixed flex flex-col justify-between top-0 left-0 w-full h-[100vh] bg-white drop-shadow-2xl z-30"
+
+                                <div className="md:hidden expanded-card fixed flex flex-col justify-between bottom-0 left-0 w-full h-full bg-white drop-shadow-2xl z-30 overflow-y-auto"
                                     style={{
                                         top: `${expandedCardIndex * 8}rem)`
                                     }}>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Unity, { UnityContext } from 'react-unity-webgl';
+import { ReactComponent as IconCheck } from "../../assets/check-icon.svg";
 import { ReactComponent as Region } from "../../assets/region.svg";
 import H1 from "../../typography/Headers/H1";
 import { MenuItem } from "../../utils/types";
@@ -24,7 +25,7 @@ const unityContext = new UnityContext({
     frameworkUrl: "buildUnity/chart.framework.js.unityweb",
     codeUrl: "buildUnity/chart.wasm.unityweb",
 
-    companyName: "DefaultCompany",
+    companyName: "Helper",
     productName: "SpiderChart",
     productVersion: "0.1",
 });
@@ -32,28 +33,47 @@ const unityContext = new UnityContext({
 const UnityContainer: React.FC = () => {
     useEffect(() => {
         unityContext.on("loaded", () => {
-            unityContext.send("Bridge", "Appear", "true");
+            // unityContext.send("Bridge", "Appear", "true");
+            unityContext.send("Bridge", "Appear", "false");
+
             // unityContext.send("Bridge", "Freeze"); // Freeze the chart
             // unityContext.send("Bridge", "Unfreeze"); // Unreeze the chart
-            unityContext.send("Bridge", "SetGrade", "Мидл 200 000₽, Обновили цель 31 января"); // shows overlay 3D text panel. args format: "<text1>,<text2>"
+            // unityContext.send("Bridge", "SetGrade", "Надпись любая, подпись любая"); // shows overlay 3D text panel. args format: "<text1>,<text2>"
 
             // chart values:
-            unityContext.send("Bridge", "SetValue", "0, 5"); // sets sector value. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
+            unityContext.send("Bridge", "SetValue", "0, 7"); // sets sector value. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
             unityContext.send("Bridge", "SetValue", "1, 5");
-            unityContext.send("Bridge", "SetValue", "2, 5");
-            unityContext.send("Bridge", "SetValue", "3, 5");
+            unityContext.send("Bridge", "SetValue", "2, 4");
+            unityContext.send("Bridge", "SetValue", "3, 6");
             unityContext.send("Bridge", "SetValue", "4, 5");
-            unityContext.send("Bridge", "SetValue", "5, 5");
+            unityContext.send("Bridge", "SetValue", "5, 6");
             unityContext.send("Bridge", "SetValue", "6, 5");
-            unityContext.send("Bridge", "SetValue", "7, 5");
-            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
-            // unityContext.send("Bridge", "SetTarget", "0, 5"); // sets contour line. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
-            unityContext.send("Bridge", "SetJobTargets", "0,1,2,3,4,5,6,7,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            unityContext.send("Bridge", "SetValue", "7, 7");
 
-            // colors:
+            // Выбрать галочку:
+            unityContext.send("Bridge", "SetTarget", "0, 0"); // sets contour line. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
+            unityContext.send("Bridge", "SetTarget", "1, 0");
+            unityContext.send("Bridge", "SetTarget", "2, 0");
+            unityContext.send("Bridge", "SetTarget", "3, 0");
+            unityContext.send("Bridge", "SetTarget", "4, 0");
+            unityContext.send("Bridge", "SetTarget", "5, 0");
+            unityContext.send("Bridge", "SetTarget", "6, 0");
+            unityContext.send("Bridge", "SetTarget", "7, 0");
+
+            // Бомбы:
+            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
+            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
+            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
+
+            // Контур:
+            unityContext.send("Bridge", "SetJobTargets", "6,6,5,6,5,4,6,7,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+
+            // Colors:
             unityContext.send("Bridge", "SetBackgroundColor", "#ffffffff");
             unityContext.send("Bridge", "SetTextColor", "#00000080");
             // unityContext.send("Bridge", "SetWaveColor", "#B3B2EC");
+
+            // Лепесток:
             // unityContext.send("Bridge", "SetSectorColor", "#B3B2EC");
             // unityContext.send("Bridge", "SetCoinColor", "#B3B2EC");
         });
@@ -89,8 +109,45 @@ const UnityContainer: React.FC = () => {
     }, []);
 
     return (
-        <div className="w-[960px] h-[350px] md:h-[600px]">
+        <div
+            className="relative w-[550px] h-[550px] md:h-[600px]"
+            style={{ pointerEvents: 'none' }}
+        >
             <Unity unityContext={unityContext} style={{ width: '100%', height: '100%' }} />
+
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '18%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                <IconCheck className="w-[12px] h-[12px] mr-1" />
+                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+            </div>
+
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '18%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                <IconCheck className="w-[12px] h-[12px] mr-1" />
+                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
+            </div>
+
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+            </div>
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+            </div>
+
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '70%', left: '11%', transform: 'translate(-50%, -50%)' }}>
+                <IconCheck className="w-[12px] h-[12px] mr-1" />
+                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
+            </div>
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '71%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                <p className="text-[#DA5041] text-[14px] font-[500] leading-[105%]">Ниже рынка</p>
+            </div>
+
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '91%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                <IconCheck className="w-[12px] h-[12px] mr-1" />
+                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+            </div>
+            <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '91%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                <IconCheck className="w-[12px] h-[12px] mr-1" />
+                <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+            </div>
         </div>
     );
 };
@@ -119,7 +176,7 @@ const Scoring: React.FC = () => {
 
     return (
         // px-[20px] pt-[20px] pb-[0px]
-        <section className="mx-auto max-w-[700px] py-5 bg-white rounded-[30px] mt-3 px-5">
+        <section className="mx-auto max-w-[700px] p-[24px] bg-white rounded-[30px] mt-3">
             <article>
                 <H1 title={'Скоринг'} />
                 <div className="flex items-start mt-[9px]">

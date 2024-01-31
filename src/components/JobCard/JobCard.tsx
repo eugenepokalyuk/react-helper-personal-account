@@ -17,7 +17,7 @@ const JobCard: React.FC<JobCardProps> = ({
     description
 }) => {
     return (
-        <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] px-[16px] py-[14px] pb-[16px] max-md:my-1">
+        <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] px-[18px] pb-[18px] py-[16px] max-md:my-1">
             <div>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">

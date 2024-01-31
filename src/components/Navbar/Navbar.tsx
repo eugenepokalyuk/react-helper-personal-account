@@ -10,24 +10,22 @@ interface NavbarProps {
 const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
     const navRef = useRef<HTMLDivElement>(null);
     const [selectedItem, setSelectedItem] = useState<string>(menuItems[0].name);
+    const prevSelectedItemRef = useRef<string>(menuItems[0].name);
+
     useEffect(() => {
-        if (navRef.current) {
+        if (prevSelectedItemRef.current !== selectedItem && navRef.current) {
             const index = menuItems.findIndex(item => item.name === selectedItem);
             const selectedElement = navRef.current.children[index] as HTMLElement;
 
-            if ('scrollBehavior' in document.documentElement.style) {
+            if (selectedElement) {
                 selectedElement.scrollIntoView({
                     behavior: 'smooth',
                     inline: 'center',
                     block: 'nearest'
                 });
-            } else {
-                selectedElement.scrollIntoView({
-                    inline: 'center',
-                    block: 'nearest'
-                });
             }
         }
+        prevSelectedItemRef.current = selectedItem;
     }, [selectedItem, menuItems]);
 
     return (

@@ -28,7 +28,7 @@ const publications = [{
 
 const Publications: React.FC = () => {
     return (
-        <section className='mx-auto max-w-[700px] mt-4 p-5 flex flex-col md:flex-row bg-white gap-[10px] rounded-[30px] pb-[55px]'>
+        <section className='mx-auto max-w-[700px] mt-4 p-[24px] flex flex-col md:flex-row bg-white gap-[10px] rounded-[30px] pb-[55px]'>
             <div>
                 <H1 title={'Публикации'} />
                 <div className="mt-4">
@@ -42,7 +42,7 @@ const Publications: React.FC = () => {
                                 />
                             </div>
                             <div className=''>
-                                <h3 className="text-[20px] text-[#000] font-[700] leading-[105%] -tracking-[0.25] mt-3 group-hover:text-black/80 transition-colors duration-300">{publication.heading}</h3>
+                                <h3 className="text-[20px] text-[#000] font-[700] leading-[105%] -tracking-[0.25] mt-3 group-hover:text-black/70 transition-colors duration-300">{publication.heading}</h3>
                                 <p className="text-[16px] font-[400] my-1 text-[#1E1E1E]/50 leading-[115%]">{publication.paragraph}</p>
                             </div>
                         </div>

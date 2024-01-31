@@ -7,7 +7,6 @@ interface WorkExperienceCardProps {
     experience: Experience
 }
 
-// const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ experience }) => {
 const WorkExperienceCard: FC<WorkExperienceCardProps & { setModalOpen: (isOpen: boolean) => void }> = ({
     experience,
     setModalOpen
