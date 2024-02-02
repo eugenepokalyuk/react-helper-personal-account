@@ -14,7 +14,6 @@ import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
 import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
 import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
 
-
 interface SkillsSectionProps {
     title: string;
     rateIcon: any
@@ -32,7 +31,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: '7,5'
+                rate: 7.5
             },
             {
                 name: "Виктория",
@@ -40,7 +39,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: '7,5'
+                rate: 7.5
             },
             {
                 name: "Виктория",
@@ -48,7 +47,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
-                rate: '7,5'
+                rate: 7.5
             }
         ],
     },
@@ -64,7 +63,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: '7,5'
+                rate: 7.5
             },
             {
                 name: "Виктория",
@@ -72,7 +71,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: '7,5'
+                rate: 7.5
             }
         ],
     },
@@ -88,7 +87,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: '7,5'
+                rate: 7.5
             },
             {
                 name: "Виктория",
@@ -96,7 +95,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: '7,5'
+                rate: 7.5
             }
         ],
     },
@@ -113,7 +112,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: YandexLogo,
-                rate: '7,5'
+                rate: 7.5
             },
             {
                 name: "Виктория",
@@ -121,7 +120,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: TinkoffLogo,
-                rate: '7,5'
+                rate: 5.5
             },
             {
                 name: "Виктория",
@@ -129,7 +128,7 @@ const cards = [
                 avatarUrl: Avatar,
                 topLeftIcon: true,
                 bottomRightIcon: OzonLogo,
-                rate: '7,5'
+                rate: 2.5
             },
         ],
     },
@@ -212,7 +211,6 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
                         </div>
                         {expandedCardIndex === index && (
                             <>
-
                                 <div
                                     className="max-md:hidden expanded-card absolute left-[50%] -translate-x-[50%] translate-y-[10%] w-[60%] bg-white card-shadows rounded-[36px] z-10"
                                     style={{
@@ -225,7 +223,16 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
                                             <div key={userIndex} className={`grid grid-cols-3 items-center mx-[30px] py-[20px] ${userIndex !== 0 && 'border-t'}`}>
                                                 <UserCard key={userIndex} user={user} isModal={true} />
                                                 <div className='flex'>
-                                                    <ThumbsUpIcon className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                    {user.rate >= 7.5 && (
+                                                        <IconGood className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                    )}
+                                                    {(user.rate > 5 && user.rate < 7.4) && (
+                                                        <IconNormal className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                    )}
+                                                    {user.rate <= 5 && (
+                                                        <IconBad className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                    )}
+                                                    {/* <ThumbsUpIcon className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' /> */}
                                                     <p className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'>{user.rate}/10</p>
                                                 </div>
                                                 <div>
@@ -270,7 +277,16 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
                                                     <div className='flex justify-between items-center'>
                                                         <UserCard key={userIndex} user={user} isModal={true} />
                                                         <div className='flex'>
-                                                            <ThumbsUpIcon className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                            {/* <ThumbsUpIcon className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' /> */}
+                                                            {user.rate >= 7.5 && (
+                                                                <IconGood className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                            )}
+                                                            {(user.rate > 5 && user.rate < 7.4) && (
+                                                                <IconNormal className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                            )}
+                                                            {user.rate <= 5 && (
+                                                                <IconBad className='mr-[6px] w-[27px] h-[27px] drop-shadow-icon' />
+                                                            )}
                                                             <p className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'>{user.rate}/10</p>
                                                         </div>
                                                     </div>

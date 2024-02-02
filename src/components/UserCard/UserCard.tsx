@@ -1,7 +1,9 @@
 import React from 'react';
 import Avatar from '../../assets/skills-user.png';
-import { ReactComponent as ThumbsDownIcon } from '../../assets/thumbs-down-icon.svg'; // Path to your SVG
-import { ReactComponent as ThumbsUpIcon } from '../../assets/thumbs-up-icon.svg'; // Path to your SVG
+
+import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
+import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
+import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
 
 interface User {
     name: string;
@@ -9,6 +11,7 @@ interface User {
     avatarUrl: string;
     topLeftIcon: boolean;
     bottomRightIcon: string;
+    rate: number
 }
 
 interface UserCardProps {
@@ -21,10 +24,18 @@ const UserCard: React.FC<UserCardProps> = ({ user, isModal }) => {
         <>
             <div className={`flex items-center`}>
                 <div className="relative mr-2">
-                    {!isModal && (user.topLeftIcon == true
+                    {!isModal && user.rate >= 7.5 ? (
+                        <IconGood className='w-[18px] h-[18px] absolute -left-1.5 -top-1.5' />
+                    ) : !isModal && (user.rate > 5 && user.rate < 7.4) ? (
+                        <IconNormal className='w-[18px] h-[18px] absolute -left-1.5 -top-1.5' />
+                    ) : !isModal && user.rate <= 5 && (
+                        <IconBad className='w-[18px] h-[18px] absolute -left-1.5 -top-1.5' />
+                    )}
+
+                    {/* {!isModal && (user.topLeftIcon == true
                         ? <ThumbsUpIcon className='w-[34px] h-[34px] absolute -left-3 -top-3' />
                         : <ThumbsDownIcon className='w-[34px] h-[34px] absolute -left-3 -top-3' />
-                    )}
+                    )} */}
                     <div className={`${isModal ? 'w-[58px] h-[58px]' : 'w-[32px] h-[32px]'}`}>
                         <img src={user.avatarUrl || Avatar} alt={user.name} className="rounded-full object-cover" />
                     </div>
