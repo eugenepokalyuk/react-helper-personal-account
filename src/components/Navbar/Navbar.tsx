@@ -30,7 +30,7 @@ const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
 
     return (
         <>
-            <div className="navbar-container">
+            <div className="navbar-container mt-6">
                 <div ref={navRef} className="menu-items">
                     {menuItems.map((item) => (
                         <button

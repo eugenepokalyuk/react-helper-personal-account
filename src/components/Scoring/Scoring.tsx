@@ -108,6 +108,8 @@ const UnityContainer: React.FC = () => {
         };
     }, []);
 
+    const userWindow = window.innerWidth;
+
     return (
         <div className="relative w-full max-w-[550px] h-[550px] max-md:h-[350px]">
             <Unity unityContext={unityContext} className="w-full h-full" />
@@ -147,42 +149,117 @@ const UnityContainer: React.FC = () => {
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
             </div>
+            {(userWindow == 425) && (
+                <div className="sm:hidden absolute top-0 left-0 w-full h-full">
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
 
-            <div className="sm:hidden absolute top-0 left-0 w-full h-full">
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '32%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
-                </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '66%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
-                </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '37%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '10%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
-                </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '40%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
-                </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '70%', left: '8%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '72%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
+                    </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '68%', left: '8%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
                 </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '69%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
-                </div>
+            )}
+            {(userWindow !== 320 && userWindow < 425) && (
+                <div className="sm:hidden absolute top-0 left-0 w-full h-full">
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '33%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '21%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '40%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '68%', left: '8%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '69%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
                 </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '89%', left: '66%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+            )}
+            {userWindow === 320 && (
+                <div className="sm:hidden absolute top-0 left-0 w-full h-full">
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '26%', left: '31%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '26%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '41%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '42.5%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#FF9B00] text-[10px] font-[500] leading-[105%]">Не дотягивает</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '65%', left: '8%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">Превосходит</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '66%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                        <p className="text-[#DA5041] text-[10px] font-[500] leading-[105%]">Ниже рынка</p>
+                    </div>
+
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '81.5%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
+                    <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '81.5%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                        <IconCheck className="w-[12px] h-[12px] mr-1" />
+                        <p className="text-[#25A443] text-[10px] font-[500] leading-[105%]">В рынке</p>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
@@ -214,15 +291,17 @@ const Scoring: React.FC = () => {
         <section className="mx-auto max-w-[700px] p-[24px] bg-white rounded-[30px] mt-3">
             <article>
                 <H1 title={'Скоринг'} />
-                <div className="flex items-start mt-[9px]">
-                    <Region className="w-[22px] h-[22px] mr-2" />
+                <div className="flex items-center mt-4">
+                    <div className='pr-1'>
+                        <Region className="w-[22px] h-[22px]" />
+                    </div>
                     <div>
                         <p className="text-black font-[12px] font-[400] leading-[115%]">Средний Middle product designer на рынке</p>
                         <p className="text-black/20 font-[12px] font-[400] leading-[115%] mt-[2px]">Обновили 23.12.2023</p>
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center mt-2">
                     <UnityContainer />
                 </div>
             </article>
