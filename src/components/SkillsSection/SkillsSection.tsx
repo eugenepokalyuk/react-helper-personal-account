@@ -150,17 +150,17 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
         // }
     };
 
-    const handleCardHover = (index: number) => {
-        if (!isMobile) {
-            setExpandedCardIndex(index);
-        }
-    };
+    // const handleCardHover = (index: number) => {
+    //     if (!isMobile) {
+    //         setExpandedCardIndex(index);
+    //     }
+    // };
 
-    const handleCardLeave = () => {
-        if (!isMobile) {
-            setExpandedCardIndex(null);
-        }
-    };
+    // const handleCardLeave = () => {
+    //     if (!isMobile) {
+    //         setExpandedCardIndex(null);
+    //     }
+    // };
 
     return (
         <article className="mt-6 pb-[50px]">
