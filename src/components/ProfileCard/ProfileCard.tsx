@@ -1,6 +1,6 @@
 import React from 'react';
+import avatar from '../../assets/animated-avatar.gif';
 import { useAppSelector } from '../../utils/hooks';
-
 const ProfileCard: React.FC = () => {
     const tags = ["19 лет", "Москва", "", "Опыт 5 лет", "Выход 2 недели"];
     const user = useAppSelector((store) => store.user)
@@ -12,7 +12,8 @@ const ProfileCard: React.FC = () => {
             >
                 <img
                     className="rounded-full"
-                    src={user.stat.photo_url}
+                    // src={user.stat.photo_url}
+                    src={avatar}
                     style={{ width: '100%', height: '100%' }}
                 />
             </picture>

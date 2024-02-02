@@ -145,9 +145,9 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
     };
 
     const handleCardClick = (index: number) => {
-        if (isMobile) {
-            setExpandedCardIndex(index === expandedCardIndex ? null : index);
-        }
+        setExpandedCardIndex(index === expandedCardIndex ? null : index);
+        // if (isMobile) {
+        // }
     };
 
     const handleCardHover = (index: number) => {
@@ -180,10 +180,11 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
             {cards.map((card, index) => (
                 <div
                     key={index}
-                    className="flex flex-col md:flex-row items-start mb-12 last:mb-0 hover:cursor-pointer"
+                    className="p-[11px] flex flex-col md:flex-row items-start mb-12 last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]"
                     onClick={() => handleCardClick(index)}
-                    onMouseEnter={() => handleCardHover(index)}
-                    onMouseLeave={handleCardLeave}
+                // onClick={() => handleCardClick(index)}
+                // onMouseEnter={() => handleCardHover(index)}
+                // onMouseLeave={handleCardLeave}
                 >
                     <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0">
                         {/* <ThumbsUpIcon className="w-[27px] h-[27px] mr-1" /> */}

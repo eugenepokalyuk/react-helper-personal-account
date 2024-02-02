@@ -31,11 +31,6 @@ const UserCard: React.FC<UserCardProps> = ({ user, isModal }) => {
                     ) : !isModal && user.rate <= 5 && (
                         <IconBad className='w-[18px] h-[18px] absolute -left-1.5 -top-1.5' />
                     )}
-
-                    {/* {!isModal && (user.topLeftIcon == true
-                        ? <ThumbsUpIcon className='w-[34px] h-[34px] absolute -left-3 -top-3' />
-                        : <ThumbsDownIcon className='w-[34px] h-[34px] absolute -left-3 -top-3' />
-                    )} */}
                     <div className={`${isModal ? 'w-[58px] h-[58px]' : 'w-[32px] h-[32px]'}`}>
                         <img src={user.avatarUrl || Avatar} alt={user.name} className="rounded-full object-cover" />
                     </div>
