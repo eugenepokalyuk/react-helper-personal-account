@@ -7,6 +7,10 @@ import { MenuItem } from "../../utils/types";
 import Navbar from "../Navbar/Navbar";
 import SkillsSection from "../SkillsSection/SkillsSection";
 
+import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
+import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
+import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
+
 declare global {
     interface Window {
         helper_onSectorsStartHit: () => void;
@@ -278,11 +282,13 @@ const Scoring: React.FC = () => {
     const renderContent = (selectedItem: string): JSX.Element => {
         switch (selectedItem) {
             case 'Продукт':
-                return <SkillsSection title={'Продуктовые навыки'} />;
+                return <SkillsSection title={'Продуктовые навыки'} rateIcon={<IconGood className="w-full h-full" />} />;
             case 'Инструменты':
-                return <SkillsSection title={'Инструментовые навыки'} />;
+                return <SkillsSection title={'Инструментовые навыки'} rateIcon={<IconNormal className="w-full h-full" />} />;
+            case 'UI':
+                return <SkillsSection title={'Инструментовые навыки'} rateIcon={<IconBad className="w-full h-full" />} />;
             default:
-                return <SkillsSection title={'Другие навыки'} />;
+                return <SkillsSection title={'Другие навыки'} rateIcon={<IconGood className="w-full h-full" />} />;
         }
     };
 

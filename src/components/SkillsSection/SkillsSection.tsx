@@ -10,8 +10,14 @@ import YandexLogo from '../../assets/yandex-logo.png';
 import H1 from '../../typography/Headers/H1';
 import UserCard from '../UserCard/UserCard';
 
+import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
+import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
+import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
+
+
 interface SkillsSectionProps {
     title: string;
+    rateIcon: any
 }
 
 const cards = [
@@ -129,7 +135,7 @@ const cards = [
     },
 ];
 
-const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
+const SkillsSection: React.FC<SkillsSectionProps> = ({ title, rateIcon }) => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
@@ -161,7 +167,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
         <article className="mt-6 pb-[50px]">
             <div className="flex px-2 mb-[40px] max-md:flex-col">
                 <div className='w-[105px] h-[105px] mr-[30px] max-md:w-[70px] max-md:h-[70px] max-md:mr-[0px] max-md:mb-3'>
-                    <ThumbsUpIcon className="w-full h-full" />
+                    {/* <ThumbsUpIcon className="w-full h-full" /> */}
+                    {rateIcon}
                 </div>
                 <div className='w-[100%]'>
                     <h2 className="text-[#000] text-[30px] font-[700] leading-[100%] -tracking-[1.25]">{title}</h2>
@@ -180,7 +187,19 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ title }) => {
                     onMouseLeave={handleCardLeave}
                 >
                     <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0">
-                        <ThumbsUpIcon className="w-[27px] h-[27px] mr-1" />
+                        {/* <ThumbsUpIcon className="w-[27px] h-[27px] mr-1" /> */}
+                        {index === 0 && (
+                            <IconGood className="w-[27px] h-[27px] mr-1" />
+                        )}
+                        {index === 1 && (
+                            <IconGood className="w-[27px] h-[27px] mr-1" />
+                        )}
+                        {index === 2 && (
+                            <IconNormal className="w-[27px] h-[27px] mr-1" />
+                        )}
+                        {index === 3 && (
+                            <IconBad className="w-[27px] h-[27px] mr-1" />
+                        )}
                         <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{card.title}</h4>
                     </div>
 
