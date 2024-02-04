@@ -180,7 +180,7 @@ const unityContext = new UnityContext({
 });
 
 const UnityContainer: FC = () => {
-    const { skills, selectedSkill } = useAppSelector((store) => store.skills);
+    const { skills } = useAppSelector((store) => store.skills);
 
     const calculateAverageRateForSkill = (reviews: any) => {
         const totalRate = reviews.reduce((acc: any, review: any) => acc + review.rate, 0);
@@ -234,7 +234,7 @@ const UnityContainer: FC = () => {
 
             // Выбрать галочку:
             // sets contour line. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
-            updatedCategories.map((category: any, index: number) => {
+            updatedCategories.map((_category: any, index: number) => {
                 return unityContext.send("Bridge", "SetTarget", `${index}, 0`);
             })
             // unityContext.send("Bridge", "SetTarget", "0, 0"); // Проактивность

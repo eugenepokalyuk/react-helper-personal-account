@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
 import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
@@ -43,7 +42,7 @@ const calculateAverageRateForCategory = (category: Category): number => {
 
 const SkillsSection: React.FC = () => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+    // const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
 
     const handleCardClick = (index: number) => {

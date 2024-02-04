@@ -1,11 +1,11 @@
 import React from 'react';
 import { useAppSelector } from '../../utils/hooks';
-const VideoPlayer = () => {
-    return (
-        <div className='player-wrapper' style={{ width: '235px', height: '235px', borderRadius: '50%', overflow: 'hidden' }}>
-        </div>
-    );
-};
+// const VideoPlayer = () => {
+//     return (
+//         <div className='player-wrapper' style={{ width: '235px', height: '235px', borderRadius: '50%', overflow: 'hidden' }}>
+//         </div>
+//     );
+// };
 
 const ProfileCard: React.FC = () => {
     const tags = ["19 лет", "Москва", "", "Опыт 5 лет", "Выход 2 недели"];
