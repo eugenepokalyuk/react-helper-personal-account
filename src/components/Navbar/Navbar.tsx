@@ -1,20 +1,24 @@
-import { FC, useEffect, useRef, useState } from 'react';
-import { MenuItem } from '../../utils/types';
+import { FC, useEffect, useRef } from 'react';
+import { setSelectedSkill } from '../../services/actions/skills';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 import './Navbar.css';
 
 interface NavbarProps {
-    menuItems: MenuItem[];
-    renderContent: (selectedItem: string) => JSX.Element;
+    // menuItems: MenuItem[];
+    // renderContent: (selectedItem: string) => JSX.Element;
 }
 
-const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
+const Navbar: FC<NavbarProps> = () => {
+    // const navRef = useRef<HTMLDivElement>(null);
+    // const { skills } = useAppSelector((store) => store.skills);
     const navRef = useRef<HTMLDivElement>(null);
-    const [selectedItem, setSelectedItem] = useState<string>(menuItems[0].name);
-    const prevSelectedItemRef = useRef<string>(menuItems[0].name);
+    const dispatch = useAppDispatch();
+    const { skills, selectedSkill } = useAppSelector((store) => store.skills);
+    const prevSelectedItemRef = useRef<string>(selectedSkill ? selectedSkill : dispatch(setSelectedSkill(skills[0].name)));
 
     useEffect(() => {
-        if (prevSelectedItemRef.current !== selectedItem && navRef.current) {
-            const index = menuItems.findIndex(item => item.name === selectedItem);
+        if (prevSelectedItemRef.current !== selectedSkill && navRef.current) {
+            const index = skills.findIndex((skill: any) => skill.name === selectedSkill);
             const selectedElement = navRef.current.children[index] as HTMLElement;
 
             if (selectedElement) {
@@ -25,29 +29,30 @@ const Navbar: FC<NavbarProps> = ({ menuItems, renderContent }) => {
                 });
             }
         }
-        prevSelectedItemRef.current = selectedItem;
-    }, [selectedItem, menuItems]);
+        prevSelectedItemRef.current = selectedSkill;
+    }, [selectedSkill, skills]);
+
+    const handleSkillSelect = (skillName: string) => {
+        dispatch(setSelectedSkill(skillName));
+    };
 
     return (
-        <>
+        <nav>
             <div className="navbar-container mt-6">
                 <div ref={navRef} className="menu-items">
-                    {menuItems.map((item) => (
+                    {skills.map((skill: any, index: number) => (
                         <button
-                            key={item.name}
-                            className={`menu-item text-[20px] font-[500] leading-[105%] px-[22px] py-[15px] max-md:p-[10px] max-md:text-[22px] text-nowrap ${item.name === selectedItem ? 'selected bg-[#F2F4F9] rounded-full' : ''}`}
-                            onClick={() => setSelectedItem(item.name)}
+                            key={index}
+                            // ${item.name === selectedItem ? 'selected bg-[#F2F4F9] rounded-full' : ''}
+                            className={`menu-item ${selectedSkill === skill.name ? 'selected bg-[#F2F4F9] rounded-full' : ''} text-[20px] font-[500] leading-[105%] px-[22px] py-[15px] max-md:p-[10px] max-md:text-[22px] text-nowrap cursor-pointer`}
+                            onClick={() => handleSkillSelect(skill.name)}
                         >
-                            {item.name}
+                            {skill.name}
                         </button>
                     ))}
                 </div>
             </div>
-
-            <div>
-                {renderContent(selectedItem)}
-            </div>
-        </>
+        </nav>
     );
 };
 

@@ -1,36 +1,26 @@
 import React from 'react';
-import ReactPlayer from 'react-player/youtube';
-// import avatar from '../../assets/animated-avatar.gif';
 import { useAppSelector } from '../../utils/hooks';
+const VideoPlayer = () => {
+    return (
+        <div className='player-wrapper' style={{ width: '235px', height: '235px', borderRadius: '50%', overflow: 'hidden' }}>
+        </div>
+    );
+};
+
 const ProfileCard: React.FC = () => {
     const tags = ["19 лет", "Москва", "", "Опыт 5 лет", "Выход 2 недели"];
     const user = useAppSelector((store) => store.user)
     return (
         <section className="flex flex-col items-center max-md:items-start max-md:justify-center text-black">
-            <div
-                className='relative max-w-[235px] m-auto rounded-full'
-                style={{ width: '235px', height: '235px' }}
-            >
-                {/* <img
+            <div className='player-wrapper' style={{ width: '235px', height: '235px', borderRadius: '50%', overflow: 'hidden' }}>
+                <img
                     className="rounded-full"
-                    // src={user.stat.photo_url}
-                    src={avatar}
+                    src={user.stat.photo_url}
+                    // src={avatar}
                     style={{ width: '100%', height: '100%' }}
-                /> */}
-                {/* <video controls width="100%">
-                    <source src={'blob:https://www.youtube.com/a2d95d45-aa6b-402e-b2a1-46e2931cc5a0'} type="video/mp4" />
-                    Sorry, your browser doesn't support embedded videos.
-                </video> */}
-                <ReactPlayer
-                    url='https://www.youtube.com/watch?v=PeL8fnHTyZI'
-                    playing={true}
-                    loop={true}
-                    muted={true}
-                    width='100%'
-                    height='100%'
-                    className='max-w-[235px] max-h-[235px] absolute top-0 left-0 rounded-full overflow-hidden z-[-10]'
                 />
             </div>
+            {/* <VideoPlayer /> */}
 
             <div className="text-center max-md:text-left mt-4">
                 <h1 className="text-[38px] font-[700] leading-[100%] -tracking-[1.5px] text-center">

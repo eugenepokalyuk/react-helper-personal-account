@@ -14,12 +14,21 @@ export type MenuItem = {
     name: string;
 };
 
+// export type User = {
+//     name: string;
+//     position: string;
+//     avatarUrl: string;
+//     topLeftIcon: React.ReactNode;
+//     bottomRightIcon: React.ReactNode;
+// }
+
 export type User = {
     name: string;
     position: string;
     avatarUrl: string;
-    topLeftIcon: React.ReactNode;
-    bottomRightIcon: React.ReactNode;
+    topLeftIcon: boolean;
+    bottomRightIcon: string;
+    rate: number;
 }
 
 export type Card = {

@@ -1,0 +1,26 @@
+export const FETCH_SKILLS_REQUEST: "FETCH_SKILLS_REQUEST" = "FETCH_SKILLS_REQUEST";
+export const FETCH_SKILLS_SUCCESS: "FETCH_SKILLS_SUCCESS" = "FETCH_SKILLS_SUCCESS";
+export const FETCH_SKILLS_FAILURE: "FETCH_SKILLS_FAILURE" = "FETCH_SKILLS_FAILURE";
+export const SET_SELECTED_SKILL: "SET_SELECTED_SKILL" = "SET_SELECTED_SKILL";
+export const RESET_SELECTED_SKILL: "RESET_SELECTED_SKILL" = "RESET_SELECTED_SKILL";
+
+export const setSelectedSkill = (skillName: string) => {
+    return {
+        type: SET_SELECTED_SKILL,
+        payload: skillName,
+    };
+};
+
+export const resetSelectedSkill = () => {
+    return {
+        type: RESET_SELECTED_SKILL,
+    };
+};
+
+export enum ActionTypes {
+    FETCH_SKILLS_REQUEST = "FETCH_SKILLS_REQUEST",
+    FETCH_SKILLS_SUCCESS = "FETCH_SKILLS_SUCCESS",
+    FETCH_SKILLS_FAILURE = "FETCH_SKILLS_FAILURE",
+    SET_SELECTED_SKILL = "SET_SELECTED_SKILL",
+    RESET_SELECTED_SKILL = "RESET_SELECTED_SKILL"
+}
