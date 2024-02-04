@@ -9,8 +9,6 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = () => {
-    // const navRef = useRef<HTMLDivElement>(null);
-    // const { skills } = useAppSelector((store) => store.skills);
     const navRef = useRef<HTMLDivElement>(null);
     const dispatch = useAppDispatch();
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
@@ -43,7 +41,6 @@ const Navbar: FC<NavbarProps> = () => {
                     {skills.map((skill: any, index: number) => (
                         <button
                             key={index}
-                            // ${item.name === selectedItem ? 'selected bg-[#F2F4F9] rounded-full' : ''}
                             className={`menu-item ${selectedSkill === skill.name ? 'selected bg-[#F2F4F9] rounded-full' : ''} text-[20px] font-[500] leading-[105%] px-[22px] py-[15px] max-md:p-[10px] max-md:text-[22px] text-nowrap cursor-pointer`}
                             onClick={() => handleSkillSelect(skill.name)}
                         >

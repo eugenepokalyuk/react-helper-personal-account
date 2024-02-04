@@ -42,7 +42,6 @@ const calculateAverageRateForCategory = (category: Category): number => {
 
 const SkillsSection: React.FC = () => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
-    // const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
 
     const handleCardClick = (index: number) => {
@@ -85,7 +84,6 @@ const SkillsSection: React.FC = () => {
                         <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0">
                             <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
                                 {selectIconByAverageRateFull(reviewsAverageRate)}
-                                {/* {selectIconByAverageRateFull(averageRateForSelectedCategory)} */}
                             </div>
                             <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
                         </div>
@@ -129,7 +127,6 @@ const SkillsSection: React.FC = () => {
                                     <div className='px-5 py-5'>
                                         <div className='flex justify-between items-center'>
                                             <div className='flex items-center'>
-                                                {/* {selectIconByAverageRate(calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews), 27)} */}
                                                 <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
                                                     {selectIconByAverageRateFull(calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews))}
                                                 </div>
@@ -153,7 +150,6 @@ const SkillsSection: React.FC = () => {
                                                     <UserCard key={userIndex} user={review} isModal={true} />
                                                     <div className='flex'>
                                                         <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
-                                                            {/* {selectIconByAverageRate(review.rate, 27)} */}
                                                             {selectIconByAverageRateFull(review.rate)}
                                                         </div>
                                                         <p className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'>{review.rate}/10</p>
