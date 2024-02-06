@@ -106,7 +106,7 @@ const SkillsSection: React.FC = () => {
                         <div className="w-full md:w-2/3 relative">
                             <p className="text-[16px] text-[#1E1E1E] font-[400] leading-[115%] max-w-[395px]">Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе</p>
 
-                            <div className='flex flex-wrap gap-4 mt-4'>
+                            <div className='flex flex-wrap gap-4 mt-3'>
                                 {skill.reviews.map((user: any, userIndex: number) => (
                                     <UserCard key={userIndex} user={user} isModal={false} />
                                 ))}
