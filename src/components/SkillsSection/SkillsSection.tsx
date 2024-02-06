@@ -104,7 +104,7 @@ const SkillsSection: React.FC = () => {
                                 <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
                             </div>
 
-                            <div>
+                            <div className='md:hidden'>
                                 <IconAccord className='fill-[#1E1E1E]/30' />
                             </div>
                         </div>
