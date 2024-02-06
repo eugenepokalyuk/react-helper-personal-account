@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { ReactComponent as Close } from "../../assets/close.svg";
+import { ReactComponent as IconAccord } from "../../assets/icon-accordion.svg";
 import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
 import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
 import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
+
+
 import H1 from '../../typography/Headers/H1';
 import { useAppSelector } from '../../utils/hooks';
 import UserCard from '../UserCard/UserCard';
@@ -81,12 +84,32 @@ const SkillsSection: React.FC = () => {
                         className="relative p-[11px] flex flex-col md:flex-row items-start mb-12 last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]"
                         onClick={() => handleCardClick(index)}
                     >
-                        <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0">
-                            <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
-                                {selectIconByAverageRateFull(reviewsAverageRate)}
+                        {/* <div className='md:hidden flex justify-between w-full items-center mb-4 md:mb-0'>
+                            <div className="flex w-full md:w-1/3 text-left items-center">
+                                <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
+                                    {selectIconByAverageRateFull(reviewsAverageRate)}
+                                </div>
+                                <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
                             </div>
-                            <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
+                            <div>
+                                <IconAccord className='fill-black' />
+                            </div>
+                        </div> */}
+
+                        <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0 justify-between">
+                            <div className='flex items-center'>
+                                <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
+                                    {selectIconByAverageRateFull(reviewsAverageRate)}
+                                </div>
+                                <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
+                            </div>
+
+                            <div>
+                                <IconAccord className='fill-[#1E1E1E]/30' />
+                            </div>
                         </div>
+
+
 
                         <div className="w-full md:w-2/3 relative">
                             <p className="text-[16px] text-[#1E1E1E] font-[400] leading-[115%] max-w-[395px]">Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе</p>
