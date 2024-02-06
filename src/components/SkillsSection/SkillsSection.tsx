@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as IconAccord } from "../../assets/icon-accordion.svg";
 import { ReactComponent as IconBad } from "../../assets/icon-bad.svg";
 import { ReactComponent as IconGood } from "../../assets/icon-good.svg";
 import { ReactComponent as IconNormal } from "../../assets/icon-normal.svg";
 
-
 import H1 from '../../typography/Headers/H1';
 import { useAppSelector } from '../../utils/hooks';
 import UserCard from '../UserCard/UserCard';
+
 type Review = {
     name: string;
     position: string;
@@ -46,6 +46,25 @@ const calculateAverageRateForCategory = (category: Category): number => {
 const SkillsSection: React.FC = () => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
+    const expandedCardRef: any = useRef(null);
+
+    const closeExpandedCard = () => setExpandedCardIndex(null);
+
+    // Event handler for click outside
+    const handleClickOutside = (event: any) => {
+
+        if (expandedCardRef.current && !expandedCardRef.current.contains(event.target)) {
+            closeExpandedCard();
+        }
+    };
+
+    // Add event listener on mount, remove on unmount
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const handleCardClick = (index: number) => {
         setExpandedCardIndex(index === expandedCardIndex ? null : index);
@@ -114,7 +133,7 @@ const SkillsSection: React.FC = () => {
                         </div>
                         {expandedCardIndex == index && (
                             <>
-                                <div className="max-md:hidden expanded-card absolute top-[29%] left-[50%] -translate-x-[50%] translate-y-[29%] w-[135%] bg-white card-shadows rounded-[36px] z-10">
+                                <div className="max-md:hidden expanded-card absolute top-[29%] left-[50%] -translate-x-[50%] translate-y-[29%] w-[135%] bg-white card-shadows rounded-[36px] z-10" ref={expandedCardRef}>
                                     <div>
                                         {selectedCategory.skills[expandedCardIndex].reviews.map((review: Review, userIndex: number) => {
                                             const textColor = getBackgroundColor(review.rate); // Get the background color
@@ -222,4 +241,5 @@ const SkillsSection: React.FC = () => {
         </article>
     );
 };
+
 export default SkillsSection;
