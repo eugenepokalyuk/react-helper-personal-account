@@ -1,7 +1,6 @@
 import { FC, useEffect } from 'react';
 import Unity, { UnityContext } from 'react-unity-webgl';
 import { ReactComponent as IconCheck } from "../../assets/check-icon.svg";
-import { useAppSelector } from '../../utils/hooks';
 
 declare global {
     interface Window {
@@ -180,32 +179,32 @@ const unityContext = new UnityContext({
 });
 
 const UnityContainer: FC = () => {
-    const { skills } = useAppSelector((store) => store.skills);
+    // const { skills } = useAppSelector((store) => store.skills);
 
-    const calculateAverageRateForSkill = (reviews: any) => {
-        const totalRate = reviews.reduce((acc: any, review: any) => acc + review.rate, 0);
-        return reviews.length > 0 ? (totalRate / reviews.length) : 0;
-    };
+    // const calculateAverageRateForSkill = (reviews: any) => {
+    //     const totalRate = reviews.reduce((acc: any, review: any) => acc + review.rate, 0);
+    //     return reviews.length > 0 ? (totalRate / reviews.length) : 0;
+    // };
 
-    const calculateAverageRateForCategory = (skills: any) => {
-        const totalRate = skills.reduce((acc: any, skill: any) => acc + calculateAverageRateForSkill(skill.reviews), 0);
-        const averageRate = skills.length > 0 ? (totalRate / skills.length) : 0;
-        return Math.round(averageRate); // Округление до целого числа
-    };
+    // const calculateAverageRateForCategory = (skills: any) => {
+    //     const totalRate = skills.reduce((acc: any, skill: any) => acc + calculateAverageRateForSkill(skill.reviews), 0);
+    //     const averageRate = skills.length > 0 ? (totalRate / skills.length) : 0;
+    //     return Math.round(averageRate); // Округление до целого числа
+    // };
 
-    const calculateAndUpdateRates = (skills: any) => {
-        return skills.map((category: any) => {
-            const averageRateForCategory = calculateAverageRateForCategory(category.skills);
-            return {
-                ...category,
-                rate: averageRateForCategory,
-                skills: category.skills.map((skill: any) => ({
-                    ...skill,
-                    averageRate: calculateAverageRateForSkill(skill.reviews),
-                }))
-            };
-        });
-    };
+    // const calculateAndUpdateRates = (skills: any) => {
+    //     return skills.map((category: any) => {
+    //         const averageRateForCategory = calculateAverageRateForCategory(category.skills);
+    //         return {
+    //             ...category,
+    //             rate: averageRateForCategory,
+    //             skills: category.skills.map((skill: any) => ({
+    //                 ...skill,
+    //                 averageRate: calculateAverageRateForSkill(skill.reviews),
+    //             }))
+    //         };
+    //     });
+    // };
 
     // const updatedCategories = calculateAndUpdateRates(skills);
 
