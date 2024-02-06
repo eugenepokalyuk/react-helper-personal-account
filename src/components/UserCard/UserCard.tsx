@@ -21,10 +21,11 @@ const UserCard: React.FC<UserCardProps> = ({ user, isModal }) => {
         <>
             <div className="flex items-center">
                 <div className="relative mr-2">
-                    <div className={`${isModal ? 'w-[23px] h-[23px]' : 'w-[15px] h-[15px]'}`}>
-                        {/* <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'> */}
-                        {!isModal && selectIconByAverageRateFull(user.rate)}
-                    </div>
+                    {!isModal && (
+                        <div className={`${'w-[15px] h-[15px]'}`}>
+                            {selectIconByAverageRateFull(user.rate)}
+                        </div>
+                    )}
                     <div className={`${isModal ? 'w-[58px] h-[58px]' : 'w-[32px] h-[32px]'}`}>
                         <img src={user.avatarUrl} alt={user.name} className="rounded-full object-cover" />
                     </div>

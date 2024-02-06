@@ -180,7 +180,7 @@ const SkillsSection: React.FC = () => {
                                                 <div key={userIndex} className={`grid grid-cols-1 items-center py-5 space-y-[14px] ${userIndex !== 0 && 'border-t'}`}>
                                                     <div className='flex justify-between items-center'>
                                                         <UserCard key={userIndex} user={review} isModal={true} />
-                                                        <div className='flex'>
+                                                        <div className='flex items-center'>
                                                             <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
                                                                 {selectIconByAverageRateFull(review.rate)}
                                                             </div>
