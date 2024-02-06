@@ -47,18 +47,19 @@ const SkillsSection: React.FC = () => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
     const expandedCardRef: any = useRef(null);
+    const [fade, setFade] = useState(false);
 
-    const closeExpandedCard = () => setExpandedCardIndex(null);
-
-    // Event handler for click outside
     const handleClickOutside = (event: any) => {
-
         if (expandedCardRef.current && !expandedCardRef.current.contains(event.target)) {
             closeExpandedCard();
         }
     };
 
-    // Add event listener on mount, remove on unmount
+    const closeExpandedCard = () => setExpandedCardIndex(null);
+    // const closeExpandedCard = () => {
+    // setTimeout(() => setExpandedCardIndex(null), 500); // Wait for animation to complete
+    // };
+
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
@@ -66,8 +67,15 @@ const SkillsSection: React.FC = () => {
         };
     }, []);
 
+    // const handleCardClick = (index: number) => {
+    //     setExpandedCardIndex(index === expandedCardIndex ? null : index);
+    //     setFade(true);
+    // };
+
     const handleCardClick = (index: number) => {
-        setExpandedCardIndex(index === expandedCardIndex ? null : index);
+        const isExpanding = index !== expandedCardIndex;
+        setExpandedCardIndex(isExpanding ? index : null);
+        setFade(isExpanding);
     };
 
     const selectIconByAverageRateFull = (averageRate: number): JSX.Element => {
@@ -85,6 +93,7 @@ const SkillsSection: React.FC = () => {
 
     const selectedCategory = skills.find((category: Category) => category.name === selectedSkill);
     const averageRateForSelectedCategory = selectedCategory ? calculateAverageRateForCategory(selectedCategory) : 0;
+
     return (
         <article className="mt-6 pb-[50px]">
             <div className="flex px-2 mb-[40px] max-md:flex-col">
@@ -102,11 +111,12 @@ const SkillsSection: React.FC = () => {
 
             {selectedCategory.skills.map((skill: any, index: number) => {
                 const reviewsAverageRate = calculateReviewsAverageRate(skill.reviews);
-                const bgColor = getBackgroundColor(reviewsAverageRate); // Get the background color
+                const bgColor = getBackgroundColor(reviewsAverageRate);
+                const isExpanded = expandedCardIndex === index;
                 return (
                     <div
                         key={index}
-                        className="relative py-4 px-5 flex flex-col md:flex-row items-start mb-[1rem] last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]"
+                        className={`relative py-4 px-5 flex flex-col md:flex-row items-start mb-[1rem] last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]`}
                         onClick={() => handleCardClick(index)}
                     >
                         <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0 justify-between">
@@ -131,28 +141,43 @@ const SkillsSection: React.FC = () => {
                                 ))}
                             </div>
                         </div>
-                        {expandedCardIndex == index && (
-                            <>
-                                <div className="max-md:hidden expanded-card absolute top-[29%] left-[50%] -translate-x-[50%] translate-y-[29%] w-[135%] bg-white card-shadows rounded-[36px] z-10" ref={expandedCardRef}>
+                        {isExpanded && (
+                            <div
+                                ref={expandedCardRef}
+                                className={``}
+                            >
+                                <div
+                                    className="max-md:hidden expanded-card absolute top-[29%] left-[50%] -translate-x-[50%] translate-y-[29%] w-[135%] bg-white card-shadows rounded-[36px] z-10"
+                                    ref={expandedCardRef}
+                                >
                                     <div>
                                         {selectedCategory.skills[expandedCardIndex].reviews.map((review: Review, userIndex: number) => {
                                             const textColor = getBackgroundColor(review.rate); // Get the background color
                                             return (
-                                                <div key={userIndex} className={`grid grid-cols-3 items-center mx-[30px] py-[20px] ${userIndex !== 0 && 'border-t'}`}>
-                                                    <UserCard key={userIndex} user={review} isModal={true} />
-                                                    <div className='flex'>
-                                                        <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
-                                                            {selectIconByAverageRateFull(review.rate)}
+                                                <div
+                                                    key={userIndex}
+                                                    className={`grid grid-cols-2 mx-[30px] py-[20px] ${userIndex !== 0 && 'border-t'}`}
+                                                >
+                                                    <div className='flex justify-between items-center w-full pr-12'>
+                                                        <UserCard key={userIndex} user={review} isModal={true} />
+
+                                                        <div className='flex justify-center'>
+                                                            <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
+                                                                {selectIconByAverageRateFull(review.rate)}
+                                                            </div>
+                                                            <p
+                                                                className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'
+                                                                style={{
+                                                                    color: textColor
+                                                                }}
+                                                            >
+                                                                {review.rate}/10
+                                                            </p>
                                                         </div>
-                                                        <p
-                                                            className='text-[#4FCC9B] text-[25px] font-[500] leading-[105%]'
-                                                            style={{
-                                                                color: textColor
-                                                            }}
-                                                        >{review.rate}/10</p>
                                                     </div>
-                                                    <div>
-                                                        <p className='text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+
+                                                    <div className='flex items-center'>
+                                                        <p className='w-[85%] text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
                                                     </div>
                                                 </div>
                                             )
@@ -161,14 +186,16 @@ const SkillsSection: React.FC = () => {
                                         )}
                                     </div>
                                     <div
-                                        className={`bg-[#44C894] rounded-b-[36px] grid grid-cols-3 items-center px-[30px] py-[15px]`}
+                                        className={`bg-[#44C894] rounded-b-[36px] grid grid-cols-2 items-center px-[30px] py-[25px]`}
                                         style={{
                                             background: bgColor
                                         }}
                                     >
-                                        <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
-                                        <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
-                                        <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                        <div className='flex justify-between items-center w-full pr-10'>
+                                            <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
+                                            <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
+                                        </div>
+                                        <p className='w-[85%] text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
                                     </div>
                                 </div>
 
@@ -233,7 +260,8 @@ const SkillsSection: React.FC = () => {
                                         <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
                                     </div>
                                 </div>
-                            </>
+                            </div>
+                            // </div>
                         )}
                     </div>
                 )
