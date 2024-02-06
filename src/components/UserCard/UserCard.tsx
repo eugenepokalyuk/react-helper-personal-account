@@ -10,17 +10,21 @@ interface UserCardProps {
     isModal?: boolean
 }
 const UserCard: React.FC<UserCardProps> = ({ user, isModal }) => {
-    const selectIconByAverageRate = (averageRate: number, size: number): JSX.Element => {
-        if (averageRate >= 7) return <IconGood className={`w-[${size}px] h-[${size}px] absolute -left-1.5 -top-1.5`} />;
-        if (averageRate > 5 && averageRate < 7) return <IconNormal className={`w-[${size}px] h-[${size}px] absolute -left-1.5 -top-1.5`} />;
-        return <IconBad className={`w-[${size}px] h-[${size}px] absolute -left-1.5 -top-1.5`} />;
+    const selectIconByAverageRateFull = (averageRate: number): JSX.Element => {
+        const iconClass = `${isModal ? 'w-[23px] h-[23px]' : 'w-[15px] h-[15px]'} absolute -left-0.5 top-2`;
+        if (averageRate >= 7) return <IconGood className={iconClass} />;
+        if (averageRate > 5 && averageRate < 7) return <IconNormal className={iconClass} />;
+        return <IconBad className={iconClass} />;
     };
 
     return (
         <>
             <div className="flex items-center">
                 <div className="relative mr-2">
-                    {!isModal && selectIconByAverageRate(user.rate, 18)}
+                    <div className={`${isModal ? 'w-[23px] h-[23px]' : 'w-[15px] h-[15px]'}`}>
+                        {/* <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'> */}
+                        {!isModal && selectIconByAverageRateFull(user.rate)}
+                    </div>
                     <div className={`${isModal ? 'w-[58px] h-[58px]' : 'w-[32px] h-[32px]'}`}>
                         <img src={user.avatarUrl} alt={user.name} className="rounded-full object-cover" />
                     </div>

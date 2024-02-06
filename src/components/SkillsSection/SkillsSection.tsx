@@ -83,7 +83,6 @@ const SkillsSection: React.FC = () => {
 
             {selectedCategory.skills.map((skill: any, index: number) => {
                 const reviewsAverageRate = calculateReviewsAverageRate(skill.reviews);
-                // const textColor = getBackgroundColor(reviewsAverageRate); // Get the background color
                 const bgColor = getBackgroundColor(reviewsAverageRate); // Get the background color
                 return (
                     <div
