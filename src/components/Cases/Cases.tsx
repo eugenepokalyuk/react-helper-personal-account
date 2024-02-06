@@ -23,11 +23,11 @@ const caseStudies = [{
 
 const Cases: React.FC = () => {
     return (
-        <section className='mx-auto max-w-[700px] mt-4 p-[24px] flex flex-col bg-white rounded-[30px]'>
+        <section className='mx-auto max-w-[700px] mt-4 p-[24px] flex flex-col bg-white rounded-[30px] pb-[55px]'>
             <H1 title={'Кейсы'} />
             <div className="flex flex-col mt-4">
                 {caseStudies.map((caseStudy, index) => (
-                    <div key={index} className='pb-[40px] group cursor-pointer hover:cursor-pointer'>
+                    <div key={index} className='pb-[40px] last:pb-[0px] group cursor-pointer hover:cursor-pointer'>
                         <div className="relative">
                             <img
                                 src={caseStudy.image}

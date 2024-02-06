@@ -15,6 +15,7 @@ type Review = {
     avatarUrl: string;
     companyLogo: string;
     rate: number;
+    comment: string
 }
 
 interface Skill {
@@ -131,7 +132,7 @@ const SkillsSection: React.FC = () => {
                         </div>
 
                         <div className="w-full md:w-2/3 relative">
-                            <p className="text-[16px] text-[#1E1E1E] font-[400] leading-[115%] max-w-[395px]">Здесь мы объяняем насколько учитывает это при работе Знает что его решения влияют на некоторые метрики, учитывает это при работе</p>
+                            <p className="text-[16px] text-[#1E1E1E] font-[400] leading-[115%] max-w-[395px]">{skill.description}</p>
 
                             <div className='flex flex-wrap gap-4 mt-3'>
                                 {skill.reviews.map((user: any, userIndex: number) => (
@@ -150,7 +151,7 @@ const SkillsSection: React.FC = () => {
                                 >
                                     <div>
                                         {selectedCategory.skills[expandedCardIndex].reviews.map((review: Review, userIndex: number) => {
-                                            const textColor = getBackgroundColor(review.rate); // Get the background color
+                                            const textColor = getBackgroundColor(review.rate);
                                             return (
                                                 <div
                                                     key={userIndex}
@@ -175,7 +176,7 @@ const SkillsSection: React.FC = () => {
                                                     </div>
 
                                                     <div className='flex items-center'>
-                                                        <p className='w-[85%] text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                                        <p className='w-[85%] text-[#1E1E1E] text-[13px] font-[400] leading-[115%]'>{review.comment}</p>
                                                     </div>
                                                 </div>
                                             )
@@ -193,7 +194,7 @@ const SkillsSection: React.FC = () => {
                                             <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
                                             <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
                                         </div>
-                                        <p className='w-[85%] text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                        <p className='w-[85%] text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].comment}</p>
                                     </div>
                                 </div>
 
@@ -212,7 +213,7 @@ const SkillsSection: React.FC = () => {
                                         </div>
 
                                         <div className='mt-[10px]'>
-                                            <p className='text-[#000] text-[20px] font-[400] leading-[105%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                            <p className='text-[#000] text-[20px] font-[400] leading-[105%]'>{skill.description}</p>
                                         </div>
                                     </div>
 
@@ -238,7 +239,7 @@ const SkillsSection: React.FC = () => {
                                                     </div>
 
                                                     <div>
-                                                        <p className='text-[#1E1E1E] text-[16px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                                        <p className='text-[#1E1E1E] text-[16px] font-[400] leading-[115%]'>{review.comment}</p>
                                                     </div>
                                                 </div>
                                             )
@@ -255,7 +256,7 @@ const SkillsSection: React.FC = () => {
                                     >
                                         <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
                                         <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
-                                        <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>Здесь мы объяняем насколько учитывает это при работе. Знает что его решения влияют на некоторые метрики, учитывает это при работе.</p>
+                                        <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].comment}</p>
                                     </div>
                                 </div>
                             </div>

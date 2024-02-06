@@ -207,7 +207,7 @@ const UnityContainer: FC = () => {
         });
     };
 
-    const updatedCategories = calculateAndUpdateRates(skills);
+    // const updatedCategories = calculateAndUpdateRates(skills);
 
     useEffect(() => {
         unityContext.on("loaded", () => {
@@ -220,31 +220,31 @@ const UnityContainer: FC = () => {
 
             // chart values:
             // sets sector value. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
-            updatedCategories.map((category: any, index: number) => {
-                return unityContext.send("Bridge", "SetValue", `${index}, ${category.rate}`);
-            })
-            // unityContext.send("Bridge", "SetValue", "0, 7"); // Проактивность
-            // unityContext.send("Bridge", "SetValue", "1, 5"); // Автономность
-            // unityContext.send("Bridge", "SetValue", "2, 4"); // Коммуникация
-            // unityContext.send("Bridge", "SetValue", "3, 6"); // Продукт
-            // unityContext.send("Bridge", "SetValue", "4, 5"); // Инструменты
-            // unityContext.send("Bridge", "SetValue", "5, 6"); // UI
-            // unityContext.send("Bridge", "SetValue", "6, 5"); // UX
-            // unityContext.send("Bridge", "SetValue", "7, 7"); // Пипл менеджмент
+            // updatedCategories.map((category: any, index: number) => {
+            //     return unityContext.send("Bridge", "SetValue", `${index}, ${category.rate}`);
+            // })
+            unityContext.send("Bridge", "SetValue", "0, 6"); // Проактивность
+            unityContext.send("Bridge", "SetValue", "1, 7"); // Автономность
+            unityContext.send("Bridge", "SetValue", "2, 7"); // Коммуникация
+            unityContext.send("Bridge", "SetValue", "3, 3"); // Продукт
+            unityContext.send("Bridge", "SetValue", "4, 8"); // Инструменты
+            unityContext.send("Bridge", "SetValue", "5, 7"); // UI
+            unityContext.send("Bridge", "SetValue", "6, 5"); // UX
+            unityContext.send("Bridge", "SetValue", "7, 3"); // Пипл менеджмент
 
             // Выбрать галочку:
             // sets contour line. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
-            updatedCategories.map((_category: any, index: number) => {
-                return unityContext.send("Bridge", "SetTarget", `${index}, 0`);
-            })
-            // unityContext.send("Bridge", "SetTarget", "0, 0"); // Проактивность
-            // unityContext.send("Bridge", "SetTarget", "1, 0"); // Автономность
-            // unityContext.send("Bridge", "SetTarget", "2, 0"); // Коммуникация
-            // unityContext.send("Bridge", "SetTarget", "3, 0"); // Продукт
-            // unityContext.send("Bridge", "SetTarget", "4, 0"); // Инструменты
-            // unityContext.send("Bridge", "SetTarget", "5, 0"); // UI
-            // unityContext.send("Bridge", "SetTarget", "6, 0"); // UX
-            // unityContext.send("Bridge", "SetTarget", "7, 0"); // Пипл менеджмент
+            // updatedCategories.map((_category: any, index: number) => {
+            //     return unityContext.send("Bridge", "SetTarget", `${index}, 0`);
+            // })
+            unityContext.send("Bridge", "SetTarget", "0, 0"); // Проактивность
+            unityContext.send("Bridge", "SetTarget", "1, 0"); // Автономность
+            unityContext.send("Bridge", "SetTarget", "2, 0"); // Коммуникация
+            unityContext.send("Bridge", "SetTarget", "3, 0"); // Продукт
+            unityContext.send("Bridge", "SetTarget", "4, 0"); // Инструменты
+            unityContext.send("Bridge", "SetTarget", "5, 0"); // UI
+            unityContext.send("Bridge", "SetTarget", "6, 0"); // UX
+            unityContext.send("Bridge", "SetTarget", "7, 0"); // Пипл менеджмент
 
             // Бомбы:
             // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
@@ -252,7 +252,8 @@ const UnityContainer: FC = () => {
             // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
 
             // Контур:
-            unityContext.send("Bridge", "SetJobTargets", "6,6,5,6,5,4,6,7,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            unityContext.send("Bridge", "SetJobTargets", "6,7,7,3,8,7,5,3,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            // unityContext.send("Bridge", "SetJobTargets", "6,7,7,3,8,7,5,3,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
 
             // Colors:
             unityContext.send("Bridge", "SetBackgroundColor", "#ffffffff");

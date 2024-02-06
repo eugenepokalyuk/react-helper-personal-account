@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import userEgorImage from '../../assets/user-egor.webp';
 import { useAppSelector } from '../../utils/hooks';
-
 const ProfileCard: React.FC = () => {
-    const tags = ["19 лет", "Москва", "", "Опыт 5 лет", "Выход 2 недели"];
+    const tags = ["19 лет", "Москва", "Опыт 5 лет", "Выход 2 недели"];
     const user = useAppSelector((store) => store.user);
     const videoUrl = 'https://504818.selcdn.ru/MAX%20Helper%20Testimonials/Anya.mp4';
     const [videoLoaded, setVideoLoaded] = useState(false);
@@ -13,12 +13,13 @@ const ProfileCard: React.FC = () => {
                 {!videoLoaded && (
                     <img
                         className="rounded-full"
-                        src={user.stat.photo_url}
+                        // src={user.stat.photo_url}
+                        src={userEgorImage}
                         alt="Placeholder"
                         style={{ width: '100%', height: '100%' }}
                     />
                 )}
-                <video
+                {/* <video
                     autoPlay
                     loop
                     muted
@@ -36,13 +37,14 @@ const ProfileCard: React.FC = () => {
                 >
                     <source src={videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
             </div>
 
 
             <div className="text-center max-md:text-left mt-4">
                 <h1 className="text-[38px] font-[700] leading-[100%] -tracking-[1.5px] text-center">
-                    {user.stat.name}
+                    {/* {user.stat.name} */}
+                    Егор Патрикеев
                 </h1>
                 <div className="mt-4 flex flex-wrap gap-[6px] justify-center">
                     {tags.map((tag, index) => (

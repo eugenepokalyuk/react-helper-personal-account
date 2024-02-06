@@ -5,13 +5,6 @@ import PublicationImage1 from '../../assets/publications-image-1.png';
 import PublicationImage2 from '../../assets/publications-image-2.png';
 import PublicationImage3 from '../../assets/publications-image-3.png';
 
-// const publications = [
-// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" },
-// { year: "2020", text: "VC: Абстракции OpenAI, зелёный Wise и «покусанный» Freeform: самые интересные ребрендинги технокомпаний за 2023 год" }
-// ];
-
 const publications = [{
     heading: "Как улучшить опыт посетителя Эрмитажа: UX анализ и редизайн сервиса онлайн покупки билетов",
     paragraph: "Привет, я Алексей, дизайнер интерфейсов. В этой статье расскажу как можно улучшить сервис продаж билетов в Эрмитаже.",
@@ -33,7 +26,7 @@ const Publications: React.FC = () => {
                 <H1 title={'Публикации'} />
                 <div className="mt-4">
                     {publications.map((publication, index) => (
-                        <div key={index} className='pb-[40px] group cursor-pointer hover:cursor-pointer'>
+                        <div key={index} className='pb-[40px] last:pb-[0px] group cursor-pointer hover:cursor-pointer'>
                             <div className="relative">
                                 <img
                                     src={publication.image}
