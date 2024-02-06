@@ -47,7 +47,6 @@ const SkillsSection: React.FC = () => {
     const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
     const { skills, selectedSkill } = useAppSelector((store) => store.skills);
     const expandedCardRef: any = useRef(null);
-    const [fade, setFade] = useState(false);
 
     const handleClickOutside = (event: any) => {
         if (expandedCardRef.current && !expandedCardRef.current.contains(event.target)) {
@@ -75,7 +74,6 @@ const SkillsSection: React.FC = () => {
     const handleCardClick = (index: number) => {
         const isExpanding = index !== expandedCardIndex;
         setExpandedCardIndex(isExpanding ? index : null);
-        setFade(isExpanding);
     };
 
     const selectIconByAverageRateFull = (averageRate: number): JSX.Element => {
