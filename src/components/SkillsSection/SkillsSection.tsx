@@ -114,7 +114,7 @@ const SkillsSection: React.FC = () => {
                 return (
                     <div
                         key={index}
-                        className={`relative py-4 px-5 flex flex-col md:flex-row items-start mb-[1rem] last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]`}
+                        className={`relative py-4 md:px-5 px-0 flex flex-col md:flex-row items-start mb-[1rem] last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]`}
                         onClick={() => handleCardClick(index)}
                     >
                         <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0 justify-between">
