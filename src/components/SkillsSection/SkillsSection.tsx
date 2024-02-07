@@ -112,15 +112,16 @@ const SkillsSection: React.FC = () => {
                 const reviewsAverageRate = calculateReviewsAverageRate(skill.reviews);
                 const bgColor = getBackgroundColor(reviewsAverageRate);
                 const isExpanded = expandedCardIndex === index;
+
                 return (
                     <div
                         key={index}
                         className={`relative py-4 md:px-5 px-0 flex flex-col md:flex-row items-start mb-[1rem] last:mb-0 hover:bg-[#F6F6F6] hover:cursor-pointer rounded-[16px] active:bg-[#F1F1F1]`}
                         onClick={() => handleCardClick(index)}
                     >
-                        <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0 justify-between">
-                            <div className='flex items-center'>
-                                <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
+                        <div className="flex w-full md:w-1/3 text-left items-center mb-4 md:mb-0 justify-between p-1">
+                            <div className='flex items-start'>
+                                <div className='min-w-[27px] min-h-[27px] max-w-[27px] max-h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
                                     {selectIconByAverageRateFull(reviewsAverageRate)}
                                 </div>
                                 <h4 className="text-[#1E1E1E] text-[20px] font-[500] leading-[115%]">{skill.name}</h4>
