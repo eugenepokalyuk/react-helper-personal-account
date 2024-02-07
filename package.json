@@ -1,7 +1,7 @@
 {
   "name": "react-helper-personal-account",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "homepage": "http://eugenepokalyuk.github.io/react-helper-personal-account",
   "scripts": {

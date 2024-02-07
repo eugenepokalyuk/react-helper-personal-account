@@ -16,6 +16,7 @@ type Review = {
     companyLogo: string;
     rate: number;
     comment: string
+    description: string
 }
 
 interface Skill {
@@ -195,14 +196,14 @@ const SkillsSection: React.FC = () => {
                                             <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
                                             <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
                                         </div>
-                                        <p className='w-[85%] text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].comment}</p>
+                                        <p className='w-[85%] text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].description}</p>
                                     </div>
                                 </div>
 
                                 <div className="md:hidden expanded-card fixed inset-0 bg-white drop-shadow-2xl z-30 overflow-y-auto">
                                     <div className='px-5 py-5'>
                                         <div className='flex justify-between items-center'>
-                                            <div className='flex items-center'>
+                                            <div className='flex items-start'>
                                                 <div className='w-[27px] h-[27px] max-md:w-[33px] max-md:h-[33px] mr-1'>
                                                     {selectIconByAverageRateFull(calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews))}
                                                 </div>
@@ -213,9 +214,9 @@ const SkillsSection: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        <div className='mt-[10px]'>
+                                        {/* <div className='mt-[10px]'>
                                             <p className='text-[#000] text-[20px] font-[400] leading-[105%]'>{skill.description}</p>
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     <div className='px-5 mt-[30px]'>
@@ -257,7 +258,7 @@ const SkillsSection: React.FC = () => {
                                     >
                                         <h2 className='text-[#fff] text-[21.5px] font-[400] leading-[115%]'>Средняя оценка</h2>
                                         <h1 className='text-[#fff] text-[39.5px] font-[400] leading-[105%]'>{calculateAverageRate(selectedCategory.skills[expandedCardIndex].reviews)}/10</h1>
-                                        <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].comment}</p>
+                                        <p className='text-[#fff] text-[13px] font-[400] leading-[115%]'>{selectedCategory.skills[expandedCardIndex].description}</p>
                                     </div>
                                 </div>
                             </div>
