@@ -20,6 +20,20 @@ import Publications from '../Publications/Publications';
 import Scoring from '../Scoring/Scoring';
 import WorkExperience from '../WorkExperience/WorkExperience';
 
+import ImageAvitoLogo from '../../assets/companies/company-avito.jpeg';
+import ImageMTCLogo from '../../assets/companies/company-mtc.png';
+import ImageOpenBankLogo from '../../assets/companies/company-openbank.png';
+import ImageOzonLogo from '../../assets/companies/company-ozon.png';
+import ImageSamokatLogo from '../../assets/companies/company-samokat.png';
+import ImageTinkoffLogo from '../../assets/companies/company-tinkoff.png';
+
+import ImageAvitoPerson from '../../assets/persons/person-avito.jpeg';
+import ImageMTCPerson from '../../assets/persons/person-mtc.jpeg';
+import ImageOpenBankPerson from '../../assets/persons/person-openbank.jpeg';
+import ImageOzonPerson from '../../assets/persons/person-ozon.jpeg';
+import ImageSamokatPerson from '../../assets/persons/person-samokat.png';
+import ImageTinkoffPerson from '../../assets/persons/person-tinkoff.jpeg';
+
 // const mock = [
 //   {
 //     name: "Проактивность",
@@ -1333,27 +1347,27 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Андрей",
+            position: "Дизайн-лид из Самокат.Тех",
+            avatarUrl: ImageSamokatPerson,
+            companyLogo: ImageSamokatLogo,
+            comment: "Проявляет отличное понимание паттернов юзабилити и умение их применять на практике. Хвалю способность видеть общие шаблоны в пользовательских интерфейсах и находить эффективные решения для улучшения юзерского опыта",
             rate: 7.5
           },
           {
-            name: "Виктория",
-            position: "Product дизайнер в Tinkoff",
-            avatarUrl: Avatar,
-            companyLogo: TinkoffLogo,
-            comment: "Comment #2",
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Нормально распознает и применяет паттерны юзабилити. Легко находит подходящие шаблоны для решения задач, знает, как их прикрутить к проектам. Работа интуитивная, понятная конечному юзеру. Вэри гуд",
             rate: 7.5
           },
           {
-            name: "Виктория",
-            position: "Product дизайнер в Ozon",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #3",
+            name: "Саша",
+            position: "Продуктовый дизайнер в Озон",
+            avatarUrl: ImageOzonPerson,
+            companyLogo: ImageOzonLogo,
+            comment: "Менти хорошо знает паттерны юзабилити и применяет их грамотно в работе. Его работы удобны для пользователей благодаря использованию стандартных шаблонов",
             rate: 7.5
           }
         ],
@@ -1364,18 +1378,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Высокий уровень владения процессом верификации решений и ведения исследований. Хорошо их проверяет, детально. Работает методично и систематически",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Катя",
+            position: "Продуктовый дизайнер в Тинькофф",
+            avatarUrl: ImageTinkoffPerson,
+            companyLogo: ImageTinkoffLogo,
+            comment: "Работали над аудитом приложения для практики. Эффективно использовал инструменты, выявлял потенциальные проблемы, предлагал оптимальные решения. Все последовательно, обоснованно",
+            rate: 7.5
+          }, {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Внимателен к процессу. Провел анализ обратной связи пользователей о новой функции чата в приложении, выявил проблемы, предложил зачетные решения для более понятного чата.",
             rate: 7.5
           }
         ],
@@ -1386,18 +1407,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Много знает о различных методах исследований. Умело выбирал подходящие типы исследований в зависимости от актуальной задачки. Хорош в интервью",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Отлично ориентируется в качественных и количественных методах исследований, понимает, что надо делать, чтобы получить полное понимание о пользовательских потребностях. Умеет отлично работать с целевой, сегментировать, прописывать боли, ресерчить вдоль и поперек",
+            rate: 7.5
+          }, {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Нереально проводит конкурентный по прямым и бенч вцелом, очень круто структурирует информацию, ищет референсы, делает анализ всего-всего и пишет не просто наблюдения по итогу, а детальные выводы и предложения",
             rate: 7.5
           }
         ],
@@ -1408,18 +1436,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Продуктовый дизайнер в Озон",
+            avatarUrl: ImageOzonPerson,
+            companyLogo: ImageOzonLogo,
+            comment: "Менти успешно применяет фреймворки продуктовой разработки для создания адаптивных интерфейсов, что значительно ускоряет процесс, понимает последовательность, видит ситуации, где можно удачно комбинировать разные подходы",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Андрей",
+            position: "Дизайн-лид из Самокат.Тех",
+            avatarUrl: ImageSamokatPerson,
+            companyLogo: ImageSamokatLogo,
+            comment: "Уверенно применяет современные фреймворки в своей работе, способен создавать продукт быстрее за счет комбинации методов работы. Быстро схватывает, объединяет методики. Отлично выводит результаты. ",
+            rate: 7.5
+          }, {
+            name: "Катя",
+            position: "Продуктовый дизайнер в Тинькофф",
+            avatarUrl: ImageTinkoffPerson,
+            companyLogo: ImageTinkoffLogo,
+            comment: "Систематично подходит к процессу разработки, думает об успешной реализации шагов, знает, какой чем подкрепить, как организовать. Не путается, может вести сложные проекты за счет владения разными фреймворками",
             rate: 7.5
           }
         ],
@@ -1430,18 +1465,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Понимает, на каком этапе генерить гипотезы. Не ограничивается поверхностными. Может заранее написать черновые, иметь их ввиду при речерче и потом хорошо шлифануть переоценив после анализа собранной информации",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Предлагает идеи на лету, систематически разрабатывает предположения, основываясь на внимательном анализе данных и исследований",
+            rate: 7.5
+          }, {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Осмысленные и целенаправленные предположения. Пишет гипотезы, от которых легко отталкиваться при построении топового сценария для глубинки.",
             rate: 7.5
           }
         ],
@@ -1452,18 +1494,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Продуктовый дизайнер в Озон",
+            avatarUrl: ImageOzonPerson,
+            companyLogo: ImageOzonLogo,
+            comment: "Круто исследует! Высокий уровень навыков. Активно применяет методы анализа данных и интервьюирования. Работали с учеником над проектом по созданию интерфейса для мобильного приложения, максимально подводит базу инфо под решения.",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Андрей",
+            position: "Дизайн-лид из Самокат.Тех",
+            avatarUrl: ImageSamokatPerson,
+            companyLogo: ImageSamokatLogo,
+            comment: "Способен систематически исследовать различные аспекты проекта, работает от цели до предложения визуала на основе очень детального, дотошнейшего ресерча. Впечатляет",
+            rate: 7.5
+          }, {
+            name: "Катя",
+            position: "Продуктовый дизайнер в Тинькофф",
+            avatarUrl: ImageTinkoffPerson,
+            companyLogo: ImageTinkoffLogo,
+            comment: "Методичен, внимателен, копает глубоко, нестандартно складывает факты по итогу, хорошо делает выводы. Очень приятно читать исследования и кейсы от менти.",
             rate: 7.5
           }
         ],
@@ -1474,18 +1523,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Четкие и информативные презентации. Удобная форма, можно не смотреть все исследование, но по выводам понятно все, что было сделано, от и до. ",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Детально пишет выводы, отлично анализирует большой объем инфо в исследовании и способен писать не только поверхностные и очевидные вещи, но и очень интересные и неожиданные. Топово для продукта.",
+            rate: 7.5
+          }, {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Хорошие. ясные выводы и предложения. Не просто наблюдения, а резюмирующие заключения.",
             rate: 7.5
           }
         ],
@@ -1496,18 +1552,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Продуктовый дизайнер в Озон",
+            avatarUrl: ImageOzonPerson,
+            companyLogo: ImageOzonLogo,
+            comment: "Менти преуспел в проектировании сценариев, трансформируя их в решения для конкретных потребностей пользователей. Способен видеть корнер-кейсы и учитывать их в деле, что радует.",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Андрей",
+            position: "Дизайн-лид из Самокат.Тех",
+            avatarUrl: ImageSamokatPerson,
+            companyLogo: ImageSamokatLogo,
+            comment: "Просматривается внимание к деталям и понимание, как превратить фичи в реальные решения для пользовательских проблем. Уверенно проектирует сценарии, хотя иногда требуется дополнительная поддержка от опытного дизайнера",
+            rate: 7.5
+          }, {
+            name: "Катя",
+            position: "Продуктовый дизайнер в Тинькофф",
+            avatarUrl: ImageTinkoffPerson,
+            companyLogo: ImageTinkoffLogo,
+            comment: "Менти активно ищет способы превратить фичи в решения, которые закроют конкретные боли пользователей, отличное качество для участника любой команды",
             rate: 7.5
           }
         ],
@@ -1518,18 +1581,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Хорошо разбирается в результатах тестирования, может их читать и анализировать. Создает детальные прототипы, способные учитывать опыт и предпочтения юзеров",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Продуктивно превращает результаты тестирований в идеи для улучшения прототипов, сами прототипы получаются чистыми, функциональными, понятными, практически сразу готовыми к передаче в дальнейшую работу",
+            rate: 7.5
+          }, {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Высочайшая детализация прототипов, кликабельные прототипы на компонентах и вариантах. Красота, очень приятно было смотреть макеты и комментировать",
             rate: 7.5
           }
         ],
@@ -1540,40 +1610,25 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Саша",
+            position: "Продуктовый дизайнер в Озон",
+            avatarUrl: ImageOzonPerson,
+            companyLogo: ImageOzonLogo,
+            comment: "Менти отлично знаком с техническими ограничениями каждой платформы, не будет теряться при проектировке и разработке. ",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
-            rate: 7.5
-          }
-        ],
-      },
-      {
-        name: "Оформление выводов",
-        description: "Легко формирует выводы на основе исследований, грамотно аргументирует сделанные выводы",
-        comment: "Comment On Footer",
-        reviews: [
-          {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Андрей",
+            position: "Дизайн-лид из Самокат.Тех",
+            avatarUrl: ImageSamokatPerson,
+            companyLogo: ImageSamokatLogo,
+            comment: "Менти учитывает ограничения на каждом этапе проектирования, даже в процессе исследования понимает, как задать вопросы с учетом будущих тех.особенностей, которые известны заранее",
             rate: 7.5
           }, {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: OzonLogo,
-            comment: "Comment #1",
+            name: "Катя",
+            position: "Продуктовый дизайнер в Тинькофф",
+            avatarUrl: ImageTinkoffPerson,
+            companyLogo: ImageTinkoffLogo,
+            comment: "Оптимально адаптированные к различным техническим средам продукты явно твой конек, дерзай! Ты все правильно видишь и чувствуешь, как идти в верном направлении",
             rate: 7.5
           }
         ],
@@ -1584,11 +1639,27 @@ const mock = [
         comment: "Comment On Footer",
         reviews: [
           {
-            name: "Виктория",
-            position: "Product дизайнер в Yandex",
-            avatarUrl: Avatar,
-            companyLogo: YandexLogo,
-            comment: "Comment #1",
+            name: "Вадим",
+            position: "Продуктовый дизайнер в Авито",
+            avatarUrl: ImageAvitoPerson,
+            companyLogo: ImageAvitoLogo,
+            comment: "Убедительный и информативный контент.  Может написать добротные тексты в интерфейс или на сайт, если не будет штатного копирайтера.",
+            rate: 7.5
+          },
+          {
+            name: "Саша",
+            position: "Design Lead МТС Music",
+            avatarUrl: ImageMTCPerson,
+            companyLogo: ImageMTCLogo,
+            comment: "Отлично пишет! Не зря есть профильное образование. Подкрутили навыки в свете работы с интерфейсами приложений и стало вообще бесподобно. Лаконично пропишет и донесет, что угодно.",
+            rate: 7.5
+          },
+          {
+            name: "Артем",
+            position: "Продуктовый дизайнер в банке «Открытие»",
+            avatarUrl: ImageOpenBankPerson,
+            companyLogo: ImageOpenBankLogo,
+            comment: "Грамотно формулирует, четко передает суть, сначала ушли в длинные тексты, потом по мере отработки пришли к добротным юиксовым текстам.",
             rate: 7.5
           }
         ],
@@ -1741,6 +1812,19 @@ const App: FC = () => {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    // function asd() {
+    //   let array: any[] = [];
+    //   mock.forEach(element => {
+    //     const skills = element.skills;
+    //     console.log()
+    //     skills.forEach(skill => {
+    //       array.push(`${element.name} => ${skill.name}`)
+    //     });
+    //   });
+    //   console.log(array);
+    // }
+    // asd();
+
     const username = 'Ireen_koz';
 
     dispatch({ type: FETCH_USER_REQUEST });
