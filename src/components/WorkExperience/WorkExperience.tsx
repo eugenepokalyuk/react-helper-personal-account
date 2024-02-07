@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import Screenshot from '../../assets/screenshot.png';
-import TinkoffLogo from '../../assets/tinkoff-logo.png';
-import VideoThumbnail from '../../assets/video-thumbnail.png';
-import YandexLogo from '../../assets/yandex-logo.png';
+import BWGLogog from '../../assets/companies/company-bwg.jpg';
+import RosLogog from '../../assets/companies/company-rosbank.jpg';
 import H1 from '../../typography/Headers/H1';
 import { Experience } from '../../utils/types';
 import WorkExperienceCard from '../WorkExperienceCard/WorkExperienceCard';
@@ -19,9 +17,9 @@ const experiences: Experience[] = [{
         "— Повысил конверсию сервиса проверки контрагентов",
         "— Повысил конверсию и улучшил юзабилити раздела приёма платежей\" Знает что его решения влияют на некоторые метрики, учитывает это при работе"
     ],
-    logo: YandexLogo,
-    videoThumbnail: VideoThumbnail,
-    videoUrl: "https://godssupport.com/images/diploma/465157376_282389471_mogusam.MP4"
+    logo: RosLogog,
+    // videoThumbnail: VideoThumbnail,
+    // videoUrl: "https://godssupport.com/images/diploma/465157376_282389471_mogusam.MP4"
 }, {
     period: "2020 — 2022",
     duration: "2 года 4 месяцев",
@@ -33,8 +31,8 @@ const experiences: Experience[] = [{
         "— Лендинги моей разработки показали конверсию от 35 до 42%",
         "— Улучшил юзабилити сложных систем"
     ],
-    logo: TinkoffLogo,
-    imageUrl: Screenshot,
+    logo: BWGLogog,
+    // imageUrl: Screenshot,
 }]
 
 // [{
