@@ -1,25 +1,48 @@
 import React from 'react';
-import ImageCasesOne from '../../assets/cases-1.png';
-import ImageCasesTwo from '../../assets/cases-2.png';
+// import ImageCasesOne from '../../assets/cases-1.png';
+// import ImageCasesTwo from '../../assets/cases-2.png';
+// import ImageCasesThree from '../../assets/cases-2.png';
+
+import ImageCasesOne from '../../assets/cases/case-1.png';
+import ImageCasesTwo from '../../assets/cases/case-2.png';
+import ImageCasesThree from '../../assets/cases/case-3.png';
+
 import { ReactComponent as IconLike } from '../../assets/like.svg';
 import H1 from '../../typography/Headers/H1';
 
 const caseStudies = [{
     image: ImageCasesOne,
-    heading: '+53% CTR за две недели без кода в BestDoctor',
-    paragraph: 'Знает что его решения влияют на некоторые метрики, учитывает',
-    customerTestimonial: 'Внутри отзыв клиента',
-}, {
-    image: ImageCasesOne,
-    heading: '+53% CTR за две недели без кода',
-    paragraph: 'Знает что его решения влияют на некоторые метрики',
+    heading: 'Увеличил среднее время на сайте на ⇪7,65% ',
+    paragraph: 'vtb.ru',
     customerTestimonial: 'Внутри отзыв клиента',
 }, {
     image: ImageCasesTwo,
-    heading: 'Визуальный кейс',
-    paragraph: 'Знает что его решения влияют на некоторые метрики',
+    heading: ' Разработал гайдлайны для подбора дизайнеров, улучшил действующий функционал сервиса и погрузился в бизнес процесс компании.',
+    paragraph: 'Нмаркет.ПРО',
+    customerTestimonial: 'Внутри отзыв клиента',
+}, {
+    image: ImageCasesThree,
+    heading: 'Увеличил показатель Customer Effort Score в 2 раза',
+    paragraph: 'Каршеринги',
     customerTestimonial: 'Внутри отзыв клиента',
 }];
+
+// [{
+//     image: ImageCasesOne,
+//     heading: '+53% CTR за две недели без кода в BestDoctor',
+//     paragraph: 'Знает что его решения влияют на некоторые метрики, учитывает',
+//     customerTestimonial: 'Внутри отзыв клиента',
+// }, {
+//     image: ImageCasesOne,
+//     heading: '+53% CTR за две недели без кода',
+//     paragraph: 'Знает что его решения влияют на некоторые метрики',
+//     customerTestimonial: 'Внутри отзыв клиента',
+// }, {
+//     image: ImageCasesTwo,
+//     heading: 'Визуальный кейс',
+//     paragraph: 'Знает что его решения влияют на некоторые метрики',
+//     customerTestimonial: 'Внутри отзыв клиента',
+// }];
 
 const Cases: React.FC = () => {
     return (
