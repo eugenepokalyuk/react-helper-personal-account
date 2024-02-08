@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import BWGLogog from '../../assets/companies/company-bwg.jpg';
-import RosLogog from '../../assets/companies/company-rosbank.jpg';
+import BWGLogo from '../../assets/companies/company-bwg.jpg';
+import RosLogo from '../../assets/companies/company-rosbank.jpg';
 import H1 from '../../typography/Headers/H1';
 import { Experience } from '../../utils/types';
 import WorkExperienceCard from '../WorkExperienceCard/WorkExperienceCard';
@@ -17,9 +17,7 @@ const experiences: Experience[] = [{
         "— Повысил конверсию сервиса проверки контрагентов",
         "— Повысил конверсию и улучшил юзабилити раздела приёма платежей\" Знает что его решения влияют на некоторые метрики, учитывает это при работе"
     ],
-    logo: RosLogog,
-    // videoThumbnail: VideoThumbnail,
-    // videoUrl: "https://godssupport.com/images/diploma/465157376_282389471_mogusam.MP4"
+    logo: RosLogo,
 }, {
     period: "2020 — 2022",
     duration: "2 года 4 месяцев",
@@ -31,9 +29,24 @@ const experiences: Experience[] = [{
         "— Лендинги моей разработки показали конверсию от 35 до 42%",
         "— Улучшил юзабилити сложных систем"
     ],
-    logo: BWGLogog,
-    // imageUrl: Screenshot,
-}]
+    logo: BWGLogo,
+}
+
+    // , {
+    //     period: "2020 — 2022",
+    //     duration: "2 года 4 месяцев",
+    //     grade: "Middle Product",
+    //     job: "Designer в BWG",
+    //     points: [
+    //         "— Повысил конверсии платежной формы на 23%",
+    //         "— Повысил конверсии из заявки в сделку с 65% до 70-75%",
+    //         "— Лендинги моей разработки показали конверсию от 35 до 42%",
+    //         "— Улучшил юзабилити сложных систем"
+    //     ],
+    //     logo: TinkoffLogo,
+    // }
+
+];
 
 // [{
 //     period: "2020 — настоящее время",

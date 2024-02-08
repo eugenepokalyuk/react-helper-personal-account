@@ -246,8 +246,8 @@ const UnityContainer: FC = () => {
             unityContext.send("Bridge", "SetTarget", "7, 0"); // Пипл менеджмент
 
             // Бомбы:
-            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
-            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
+            // unityContext.send("Bridge", "SetValueWithBomb", "3, 5"); // same as above, but with bombs
+            // unityContext.send("Bridge", "SetValueWithBomb", "5, 5"); // same as above, but with bombs
             // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
 
             // Контур:

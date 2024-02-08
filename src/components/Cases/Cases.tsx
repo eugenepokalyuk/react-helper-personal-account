@@ -4,8 +4,8 @@ import React from 'react';
 // import ImageCasesThree from '../../assets/cases-2.png';
 
 import ImageCasesOne from '../../assets/cases/case-1.png';
-import ImageCasesTwo from '../../assets/cases/case-2.png';
-import ImageCasesThree from '../../assets/cases/case-3.png';
+import ImageCasesThree from '../../assets/cases/case-2.png';
+import ImageCasesTwo from '../../assets/cases/case-3.png';
 
 import { ReactComponent as IconLike } from '../../assets/like.svg';
 import H1 from '../../typography/Headers/H1';
