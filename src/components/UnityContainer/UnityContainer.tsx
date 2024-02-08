@@ -231,6 +231,8 @@ const UnityContainer: FC = () => {
             unityContext.send("Bridge", "SetValue", "6, 5"); // UX
             unityContext.send("Bridge", "SetValue", "7, 3"); // Пипл менеджмент
 
+
+
             // Выбрать галочку:
             // sets contour line. arguments format: "<sector index (0-7)>,<sector value(0-10)>"
             // updatedCategories.map((_category: any, index: number) => {
@@ -247,17 +249,15 @@ const UnityContainer: FC = () => {
 
             // Бомбы:
             // unityContext.send("Bridge", "SetValueWithBomb", "3, 5"); // same as above, but with bombs
-            // unityContext.send("Bridge", "SetValueWithBomb", "5, 5"); // same as above, but with bombs
-            // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
 
             // Контур:
-            unityContext.send("Bridge", "SetJobTargets", "7,8,8,4,9,8,6,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
-            // unityContext.send("Bridge", "SetJobTargets", "7,8,8,4,9,8,6,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            unityContext.send("Bridge", "SetJobTargets", "6,7,8,4,9,7,5,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            // unityContext.send("Bridge", "SetJobTargets", "7,8,9,4,9,8,6,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
 
             // Colors:
             // unityContext.send("Bridge", "SetBackgroundColor", "#ff69b4ff");
             unityContext.send("Bridge", "SetBackgroundColor", "#ffffffff");
-            
+
             unityContext.send("Bridge", "SetTextColor", "#00000080");
             // unityContext.send("Bridge", "SetWaveColor", "#B3B2EC");
 
