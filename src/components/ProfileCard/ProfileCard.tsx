@@ -1,7 +1,8 @@
 import React from 'react';
-import userEgorImage from '../../assets/user-egor.webp';
+import personEgor from '../../assets/persons/person-egor.jpeg';
 const ProfileCard: React.FC = () => {
-    const tags = ["19 лет", "Москва", "Опыт 5 лет", "Выход 2 недели"];
+    // const tags = ["19 лет", "Москва", "Опыт 5 лет", "Выход 2 недели"];
+    const tags = ["25 лет", "Москва", "Опыт 3 года 9 месяцев", "Выход 2 недели"]
     // const user = useAppSelector((store) => store.user);
     // const videoUrl = 'https://504818.selcdn.ru/MAX%20Helper%20Testimonials/Anya.mp4';
     // const [videoLoaded, setVideoLoaded] = useState(false);
@@ -10,13 +11,14 @@ const ProfileCard: React.FC = () => {
         <section className="flex flex-col items-center max-md:justify-center text-black">
             <div className="video-container" style={{ width: '235px', height: '235px', borderRadius: '50%', overflow: 'hidden', position: 'relative' }}>
                 {/* {!videoLoaded && ( */}
-                    <img
-                        className="rounded-full"
-                        // src={user.stat.photo_url}
-                        src={userEgorImage}
-                        alt="Placeholder"
-                        style={{ width: '100%', height: '100%' }}
-                    />
+                <img
+                    className="rounded-full"
+                    // src={user.stat.photo_url}
+                    src={personEgor}
+                    // src={userEgorImage}
+                    alt="Placeholder"
+                    style={{ width: '100%', height: '100%' }}
+                />
                 {/* )} */}
                 {/* <video
                     autoPlay

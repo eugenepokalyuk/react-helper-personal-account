@@ -251,11 +251,13 @@ const UnityContainer: FC = () => {
             // unityContext.send("Bridge", "SetValueWithBomb", "7, 5"); // same as above, but with bombs
 
             // Контур:
-            unityContext.send("Bridge", "SetJobTargets", "6,7,7,3,8,7,5,3,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
-            // unityContext.send("Bridge", "SetJobTargets", "6,7,7,3,8,7,5,3,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            unityContext.send("Bridge", "SetJobTargets", "7,8,8,4,9,8,6,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
+            // unityContext.send("Bridge", "SetJobTargets", "7,8,8,4,9,8,6,4,#B3B2EC,#B8BEF9"); // sets filled contour line. arguments format: "<8 sector values>,<line color>,<background color>"
 
             // Colors:
+            // unityContext.send("Bridge", "SetBackgroundColor", "#ff69b4ff");
             unityContext.send("Bridge", "SetBackgroundColor", "#ffffffff");
+            
             unityContext.send("Bridge", "SetTextColor", "#00000080");
             // unityContext.send("Bridge", "SetWaveColor", "#B3B2EC");
 

@@ -4,7 +4,7 @@ const SalaryIndicator: React.FC = () => {
     const totalSalaryRange = 350000;
     const highlightedStart = 150000;
     const highlightedEnd = 220000;
-    const currentSalary = 200000;
+    const currentSalary = 180000;
 
     const highlightedStartPercent = (highlightedStart / totalSalaryRange) * 100;
     const highlightedWidthPercent = ((highlightedEnd - highlightedStart) / totalSalaryRange) * 100;
