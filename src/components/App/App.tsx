@@ -2791,10 +2791,11 @@ const App: FC = () => {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const username = 'Ireen_koz';
+    // const username = 'Ireen_koz';
 
     dispatch({ type: FETCH_USER_REQUEST });
-    fetchUserData(username)
+    fetchUserData()
+    // fetchUserData(username)
       .then(res => {
         dispatch({ type: FETCH_USER_SUCCESS, payload: res });
         dispatch({ type: FETCH_SKILLS_SUCCESS, payload: mock });
