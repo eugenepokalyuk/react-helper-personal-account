@@ -2792,7 +2792,6 @@ const App: FC = () => {
 
   useEffect(() => {
     // const username = 'Ireen_koz';
-
     dispatch({ type: FETCH_USER_REQUEST });
     fetchUserData()
       // fetchUserData(username)
@@ -2804,11 +2803,10 @@ const App: FC = () => {
         dispatch({ type: FETCH_USER_FAILURE, payload: error });
       })
       .finally(() => {
-        setLoading(false); // Устанавливаем isLoading в false после завершения запроса
+        setLoading(false);
       });
   }, [dispatch]);
 
-  // Если isLoading равен true, отображаем состояние загрузки
   if (isLoading) {
     return <></>;
   }

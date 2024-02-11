@@ -44,13 +44,13 @@ const Header = () => {
         <Share />
 
         {showShareHover && !showShareClick && windowWidth > 768 && (
-          <div className="absolute text-nowrap top-[60px] left-[100%] transform -translate-x-[100%] px-[14px] py-[12px] bg-black text-white rounded-[12px] text-sm">
+          <div className="absolute top-[60px] left-[100%] transform -translate-x-[100%] px-[14px] py-[12px] bg-black rounded-[12px]">
             <p className='text-[16px] text-[#fff] font-[400] leading-[105%] text-nowrap'>Поделиться</p>
           </div>
         )}
 
         {showShareClick && (
-          <div className="absolute text-nowrap top-[60px] left-[100%] transform -translate-x-[100%] px-[14px] py-[12px] bg-black text-white rounded-[12px] text-sm">
+          <div className="absolute top-[60px] left-[100%] transform -translate-x-[100%] px-[14px] py-[12px] bg-black rounded-[12px]">
             <p className='text-[16px] text-[#fff] font-[400] leading-[105%] text-nowrap'>Ссылка скопирована</p>
           </div>
         )}
