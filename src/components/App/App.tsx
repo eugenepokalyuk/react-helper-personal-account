@@ -2795,7 +2795,7 @@ const App: FC = () => {
 
     dispatch({ type: FETCH_USER_REQUEST });
     fetchUserData()
-    // fetchUserData(username)
+      // fetchUserData(username)
       .then(res => {
         dispatch({ type: FETCH_USER_SUCCESS, payload: res });
         dispatch({ type: FETCH_SKILLS_SUCCESS, payload: mock });

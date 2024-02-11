@@ -2,7 +2,8 @@ import { ReactComponent as Region } from "../../assets/region.svg";
 import H1 from "../../typography/Headers/H1";
 import Navbar from '../Navbar/Navbar';
 import SkillsSection from '../SkillsSection/SkillsSection';
-import UnityContainer from "../UnityContainer/UnityContainer";
+// import UnityContainer from "../UnityContainer/UnityContainer";
+import Image from '../../assets/spider-screenshot.png';
 
 const Scoring: React.FC = () => {
     return (
@@ -20,7 +21,15 @@ const Scoring: React.FC = () => {
                 </div>
             </article>
 
-            <UnityContainer />
+            {/* <UnityContainer /> */}
+            <div className="flex justify-center items-center mt-2">
+                <div className="relative w-full max-w-[550px]">
+                {/* <div className="relative w-full max-w-[550px] h-[550px] max-md:h-[350px]"> */}
+                    <img src={Image} alt="" />
+                    {/* <Unity unityContext={unityContext} className="w-full h-full" /> */}
+                </div>
+            </div>
+
             <Navbar />
             <SkillsSection />
         </section>
