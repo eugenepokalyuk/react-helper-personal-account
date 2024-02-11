@@ -7,12 +7,10 @@ const JobRecommendation: React.FC = () => {
             <JobCard
                 title="Рекомендуемая позиция"
                 subtitle="Middle продуктовый дизайнер"
-                description="Справедливая зарплата, исходя из 72% мечта с существующими вакансиями"
             />
             <JobCard
                 title="Справедливая зарплата"
                 subtitle="180 000 ₽/мес"
-                description="Справедливая зарплата, исходя из 72% мечта с существующими вакансиями"
                 isSalary
             />
         </section>

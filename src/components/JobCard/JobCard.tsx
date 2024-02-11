@@ -6,7 +6,7 @@ import SalaryIndicator from '../SalaryIndicator/SalaryIndicator';
 interface JobCardProps {
     title: string;
     subtitle: string;
-    description: string;
+    // description: string;
     isSalary?: boolean;
 }
 
@@ -14,7 +14,7 @@ const JobCard: React.FC<JobCardProps> = ({
     title,
     subtitle,
     isSalary,
-    description
+    // description
 }) => {
     return (
         <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] px-[18px] pb-[18px] py-[16px] max-md:my-1">
@@ -36,7 +36,7 @@ const JobCard: React.FC<JobCardProps> = ({
             </div>
 
             <div className="mt-4">
-                <p className="text-[12px] font-[400] leading-[115%] text-black/40">{description}</p>
+                <p className="text-[12px] font-[400] leading-[115%] text-black/40">Справедливая зарплата, исходя из 72% мечта <span className='text-nowrap'>с существующими</span> вакансиями</p>
             </div>
         </article>
     );
