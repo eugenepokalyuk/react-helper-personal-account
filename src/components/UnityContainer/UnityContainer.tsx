@@ -18,38 +18,60 @@ const MockData = () => {
     return (
         <>
             <div className="max-md:hidden absolute top-0 left-0 w-full h-full">
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+
+                {/* Пипл-менеджемнт */}
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '14%', left: '33%', transform: 'translate(-50%, -50%)' }}>
+                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" /> */}
+                    {/* <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p> */}
+                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
+
+                {/* Проактивность */}
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '14%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '15%', left: '67%', transform: 'translate(-50%, -50%)' }}>
+                {/* UX */}
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '36.5%', left: '8.5%', transform: 'translate(-50%, -50%)' }}>
+                    {/* <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38%', left: '10%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
-                </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '39%', left: '91.5%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+                {/* Автономность */}
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38.5%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                    {/* <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p> */}
+                    <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
+                {/* UI */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '71%', left: '9%', transform: 'translate(-50%, -50%)' }}>
+                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" />
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p>
-                </div>
-                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '72%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                    <p className="text-[#DA5041] text-[14px] font-[500] leading-[105%]">Ниже рынка</p>
+                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
+                {/* Коммуникация */}
+                <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '72%', left: '91%', transform: 'translate(-50%, -50%)' }}>
+                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
+                </div>
+
+                {/* Инструменты */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '33%', transform: 'translate(-50%, -50%)' }}>
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
+
+                {/* Продукт */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '67%', transform: 'translate(-50%, -50%)' }}>
-                    <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
+                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" /> */}
+                    {/* <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p> */}
+                    <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
                 </div>
             </div>
             {(window.innerWidth == 425) && (

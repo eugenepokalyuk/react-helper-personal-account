@@ -24,9 +24,7 @@ const Scoring: React.FC = () => {
             {/* <UnityContainer /> */}
             <div className="flex justify-center items-center mt-2">
                 <div className="relative w-full max-w-[550px]">
-                {/* <div className="relative w-full max-w-[550px] h-[550px] max-md:h-[350px]"> */}
                     <img src={Image} alt="" />
-                    {/* <Unity unityContext={unityContext} className="w-full h-full" /> */}
                 </div>
             </div>
 
