@@ -83,7 +83,6 @@ const SkillsSection: FC = () => {
         return "#E94230";
     };
 
-    // const selectedCategory = skills.find((category: Category) => category.name === selectedSkill);
     const selectedCategory = skills.length > 0 ? (skills.find((category: Category) => category.name === selectedSkill) || skills[0]) : null;
     const averageRateForSelectedCategory = selectedCategory ? calculateAverageRateForCategory(selectedCategory) : 0;
 

@@ -6,7 +6,6 @@ import SalaryIndicator from '../SalaryIndicator/SalaryIndicator';
 interface JobCardProps {
     title: string;
     subtitle: string;
-    // description: string;
     isSalary?: boolean;
 }
 
@@ -14,7 +13,6 @@ const JobCard: React.FC<JobCardProps> = ({
     title,
     subtitle,
     isSalary,
-    // description
 }) => {
     return (
         <article className="flex flex-col flex-1 justify-between bg-white rounded-[20px] px-[18px] pb-[18px] py-[16px] max-md:my-1">

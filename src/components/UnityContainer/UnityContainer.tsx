@@ -21,37 +21,29 @@ const MockData = () => {
 
                 {/* Пипл-менеджемнт */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '14%', left: '33%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" /> */}
-                    {/* <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p> */}
                     <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
                 </div>
 
                 {/* Проактивность */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '14%', left: '67%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
                 {/* UX */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '36.5%', left: '8.5%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
                 {/* Автономность */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '38.5%', left: '91%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
 
                 {/* UI */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '71%', left: '9%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" />
-                    <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">Превосходит</p> */}
                     <IconCheck className="w-[12px] h-[12px] mr-1" />
                     <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p>
                 </div>
@@ -69,8 +61,6 @@ const MockData = () => {
 
                 {/* Продукт */}
                 <div className="absolute text-nowrap flex items-center justify-center" style={{ top: '95%', left: '67%', transform: 'translate(-50%, -50%)' }}>
-                    {/* <IconCheck className="w-[12px] h-[12px] mr-1" /> */}
-                    {/* <p className="text-[#25A443] text-[14px] font-[500] leading-[105%]">В рынке</p> */}
                     <p className="text-[#FF9B00] text-[14px] font-[500] leading-[105%]">Не дотягивает</p>
                 </div>
             </div>

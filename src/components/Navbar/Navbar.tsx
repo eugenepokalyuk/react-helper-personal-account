@@ -6,62 +6,15 @@ import './Navbar.css';
 const Navbar = () => {
     const navRef = useRef<HTMLDivElement>(null);
     const dispatch = useAppDispatch();
-    const { skills, selectedSkill } = useAppSelector((store) => store.skills);
-
-    // // const prevSelectedItemRef = useRef<string>(selectedSkill ? selectedSkill : dispatch(setSelectedSkill(skills[0].name)));
-    // const prevSelectedItemRef = useRef<string>(selectedSkill ? selectedSkill : '');
-
-    // useEffect(() => {
-    //     // if (prevSelectedItemRef.current !== selectedSkill && navRef.current) {
-    //     if (prevSelectedItemRef.current && prevSelectedItemRef.current !== selectedSkill && navRef.current) {
-    //         const index = skills.findIndex((skill: any) => skill.name === selectedSkill);
-    //         const selectedElement = navRef.current.children[index] as HTMLElement;
-
-    //         if (selectedElement) {
-    //             selectedElement.scrollIntoView({
-    //                 behavior: 'smooth',
-    //                 inline: 'center',
-    //                 block: 'nearest'
-    //             });
-    //         }
-    //     }
-    //     // prevSelectedItemRef.current = selectedSkill;
-    //     if (selectedSkill) {
-    //         prevSelectedItemRef.current = selectedSkill;
-    //     }
-    // }, [selectedSkill, skills]);
-
-    // useEffect(() => {
-    //     if (!selectedSkill && skills.length > 0) {
-    //         dispatch(setSelectedSkill(skills[0].name));
-    //     }
-    // }, [dispatch, selectedSkill, skills]);
-
     const [isUserAction, setIsUserAction] = useState(false);
+
+    const { skills, selectedSkill } = useAppSelector((store) => store.skills);
 
     useEffect(() => {
         if (!selectedSkill && skills.length > 0) {
             dispatch(setSelectedSkill(skills[0].name));
         }
     }, [dispatch, selectedSkill, skills]);
-
-    // useEffect(() => {
-    //     if (selectedSkill && navRef.current) {
-    //         const index = skills.findIndex((skill: any) => skill.name === selectedSkill);
-    //         const selectedElement = navRef.current.children[index] as HTMLElement;
-    //         if (selectedElement) {
-    //             selectedElement.scrollIntoView({
-    //                 behavior: 'smooth',
-    //                 inline: 'center',
-    //                 block: 'nearest'
-    //             });
-    //         }
-    //     }
-    // }, [selectedSkill, skills]);
-
-    // const handleSkillSelect = (skillName: string) => {
-    //     dispatch(setSelectedSkill(skillName));
-    // };
 
     useEffect(() => {
         if (isUserAction && selectedSkill && navRef.current) {
@@ -75,10 +28,10 @@ const Navbar = () => {
                 });
             }
         }
-    }, [selectedSkill, skills, isUserAction]); // Добавляем isUserAction в зависимости
+    }, [selectedSkill, skills, isUserAction]);
 
     const handleSkillSelect = (skillName: string) => {
-        setIsUserAction(true); // Устанавливаем флаг при действии пользователя
+        setIsUserAction(true);
         dispatch(setSelectedSkill(skillName));
     };
 

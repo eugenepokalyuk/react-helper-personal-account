@@ -19,11 +19,6 @@ const Header = () => {
     };
   }, []);
 
-  // const shareURL = () => {
-  //   navigator.clipboard.writeText(window.location.href);
-  //   setShowShareClick(true);
-  //   setTimeout(() => setShowShareClick(false), 2000);
-  // };
   const shareURL = () => {
     navigator.clipboard.writeText(window.location.href);
     setShowShareClick(true);
